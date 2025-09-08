@@ -1,0 +1,73 @@
+name: Portfolio Feedback
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feat/**
+      - fix/**
+      - chore/**
+      - docs/**
+      - style/**
+      - refactor/**
+
+permissions:
+  contents: write
+
+
+
+jobs:
+  feedback:
+    if: ${{!contains(github.event.head_commit.message, '[skip ci]')}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install htmlhint stylelint commitlint cheerio glob
+
+      - name: Run HTMLHint
+        run: npx htmlhint '**/*.html' > html-report.txt 2>&1 || true
+
+      - name: Check files css exist
+        run: |
+          if ls **/*.css 1> /dev/null 2>&1; then
+            cat **/*.css
+          else
+            echo "Aucun fichier CSS trouvé." >> feedback.md
+          fi
+
+      - name: Run Stylelint (debug pattern)
+        run: |
+              echo "=== FICHIERS CSS DÉTECTÉS ==="
+              ls -l $(find . -name "*.css")
+              npx stylelint "$(find . -name '*.css')" > css-report.txt 2>&1 || true
+
+      - name: Run Commitlint
+        run: git log -1 --pretty=%B | npx commitlint > commit-report.txt 2>&1 || true
+
+      - name: Parse feedback
+        run: node feedback-parser.js
+
+      - name: Show feedback
+        run: cat feedback.md
+
+      - name: Commit and push feedback
+        run: |
+          set -ex
+          git config --global user.name "GitHub Action"
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          echo "=== DIFF AVANT ADD ==="
+          git diff feedback.md || true
+          cat feedback.md
+          git add feedback.md
+          git status
+          git commit -m "chore: mise à jour du feedback automatique [skip ci]" || echo "Aucun changement à commiter."
+          git push
