@@ -47,15 +47,6 @@ Il permet d’assurer une cohérence visuelle avec :
 - **Git/GitHub** → Versioning et partage du code  
 
 
-## 📸 Aperçu
-
-- **Accueil** → Présentation avec photo de profil  
-- **CV** → Liste des formations, expériences et compétences  
-- **Projets** → Galerie de réalisations avec images et descriptions  
-- **Contact** → Formulaire simple + liens directs (email, LinkedIn, téléphone)  
-
-
-
 ## 📬 Contact
 
 👩‍💻 Développé par **Rachel Fayila**
