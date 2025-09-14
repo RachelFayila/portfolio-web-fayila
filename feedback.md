@@ -1,6 +1,7 @@
 # Feedback HTML
 
-✅ Aucun problème détecté ! 🎉
+- ❌ **Balise auto-fermante incorrecte** : certaines balises doivent se terminer par `/>`. 💡 Exemple : `<img src='...' />`.
+
 
 
 # Feedback CSS
