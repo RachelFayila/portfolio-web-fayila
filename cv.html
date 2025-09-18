@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,50 +8,72 @@
 </head>
 <body>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
+  <header class="header">
+  <div class="logo">
+    <a class="link" href="index.html">RF</a>
+  </div>
+  <input type="checkbox" id="hamburger" name="hamburger">
+  <label for="hamburger" class="hamburger">
+    <img src="../projet-portfolio-RachelFayila/images/menu.png" alt="Menu">
+  </label>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a class="link" href="cv.html">CV |</a></li>
+      <li><a class="link" href="projets.html">Projets |</a></li>
+      <li><a class="link" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
   <main>
-    <section>
-      <h1>Mon CV</h1>
+    <section class="cv">
+        <h1>Mon CV</h1>
 
-      <h2>🎓 Éducation</h2>
+      <div class="Education">
+      <h2>Éducation</h2>
       <ul>
         <li>Licence en Gestion des Entreprises</li>
         <li>Certification en Marketing Digital</li>
         <li>Formation en Développement Web (Kadea Academia)</li>
       </ul>
+      </div>
 
-      <h2>💼 Expériences</h2>
+      <div class="Entrepreneurial">
+        <h2>Expériences</h2>
       <ul>
         <li>Projets académiques et personnels en HTML, CSS</li>
         <li>Gestion de projets digitaux (community management, e-commerce)</li>
       </ul>
-
-      <h2>🛠️ Compétences</h2>
+      </div>
+      
+      <div class="Compétences">
+        <h2>Compétences</h2>
       <ul>
         <li>Langages : HTML, CSS</li>
         <li>Outils : Git, GitHub, Figma, VS Code</li>
         <li>Soft skills : Communication, créativité, esprit d’équipe</li>
       </ul>
+      </div>
     </section>
   </main>
-
-  <footer>
-    <p>Télephone 
-+243-898914483 
-Email
-fayilarachel72@gmail.com
-Suivez-moi 
-© 2025 By Rachel Fayila</p>
-  </footer>
+  <footer class="footer">
+        <div>
+            <p><strong>Téléphone</strong></p>
+            <p><span>+243839893138</span></p>
+            <div>
+            <p><strong>Email</strong></p> 
+            <p><span>fayilarachel72@gmail.com</span></p>
+        </div>
+            <div>
+                <p><strong>Suivez-moi</strong></p>
+                <div class="link">
+                    <a href="http://www.instagram.com"><img src="../projet-portfolio-RachelFayila/images/instagram.png" alt=""></a>
+                    <a href="http://www.twitter.com"><img src="../projet-portfolio-RachelFayila/images/twitter.png" alt=""></a>
+                    <a href="http://www.linken.com"><img src="../projet-portfolio-RachelFayila/images/linken logo.png" alt=""></a>
+                </div>
+            </div>
+        <div>
+            <span>@2025By Rachel Fayila</span>
+        </div>
+    </footer>
 </body>
 </html>

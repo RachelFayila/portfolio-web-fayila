@@ -1,47 +1,74 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accueil - Portfolio Rachel Fayila</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Portfolio Rachel Fayila</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#index.html">Accueil</a></li>
-        <li><a href="#cv.html">CV</a></li>
-        <li><a href="#projets.html">Projets</a></li>
-        <li><a href="#contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero"> 
-        <img src="../projet-portfolio-RachelFayila/images/IMG_0110.PNG" alt="profil">
-      <h1>Hello 👋</h1>
-      <h2>À propos de moi</h2>
-      <p>
-        Animée par la passion du numérique, je suis Rachel Fayila,
-        développeuse web avec une vision créative et innovante. 
-        Au-delà du code, je cherche à concevoir des expériences <br> 
-        digitales qui inspirent,facilitent la vie des utilisateurs 
-        et apportent une réelle valeur ajoutée aux projets que je réalise. <br>
-      </p>
-    </section>
-  </main>
+<header class="header">
+  <div class="logo">
+    <a class="link" href="index.html">RF</a>
+  </div>
+  <input type="checkbox" id="hamburger" name="hamburger">
+  <label for="hamburger" class="hamburger">
+    <img src="../projet-portfolio-RachelFayila/images/menu.png" alt="Menu">
+  </label>
+  <nav class="nav">
+    <ul class="nav-list">
 
-  <footer>
-    <p>Télephone 
-+243-898914483 
-Email
-fayilarachel72@gmail.com
-Suivez-moi 
-© 2025 By Rachel Fayila</p>
-   
-  </footer>
+      <li><a class="link" href="cv.html">CV |</a></li>
+      <li><a class="link" href="projets.html">Projets |</a></li>
+      <li><a class="link" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+    <main>
+        <section class="hero-section">
+            <div class="photo">
+                <img src="../projet-portfolio-RachelFayila/images/IMG_0110.PNG" alt="profil">
+            </div>
+            <div class="about">
+               <h1>Hello</h1>
+               <h2>À propos de moi</h2>
+         <p>
+            Animée par la passion du numérique, je suis Rachel Fayila, développeurse web avec une vision créative et innovante. 
+            Au-delà du code, je cherche à concevoir des expériences digitales qui inspirent, facilitent la vie des utilisateurs 
+            et apportent une réelle valeur ajoutée aux projets que je réalise.
+         </p>
+
+            <div class="btn-groupe">
+               <button class="btn-cv">CV</button>
+               <button class="btn-projets">Projets</button>
+               <button class="btn-contact">Contact</button>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div>
+            <p><strong>Téléphone</strong></p>
+            <p><span>+243839893138</span></p>
+        </div>    
+        <div>
+            <p><strong>Email</strong></p> 
+            <p><span>fayilarachel72@gmail.com</span></p>
+        </div>
+            <div>
+                <p><strong>Suivez-moi</strong></p>
+                <div class="">
+                    <a href="http://www.instagram.com"><img src="../projet-portfolio-RachelFayila/images/instagram.png" alt=""></a>
+                    <a href="http://www.twitter.com"><img src="../projet-portfolio-RachelFayila/images/twitter.png" alt=""></a>
+                    <a href="http://www.linken.com"><img src="../projet-portfolio-RachelFayila/images/linken logo.png" alt=""></a>
+                </div>
+            </div>
+        <div>
+            <span>@2025By Rachel Fayila</span>
+        </div>
+    </footer>
 </body>
 </html>
