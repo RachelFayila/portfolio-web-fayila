@@ -7,7 +7,7 @@
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  background: #fdfdfd;
+  background: #e9e8e8;
   color: #333;
 }
 
@@ -52,8 +52,8 @@ body {
 }
 
 .hamburger img {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 
@@ -96,8 +96,8 @@ body {
 }
 
 .photo img {
-    width: 220px;
-    height: 220px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit:cover;
     border: 4px solid #fff;
@@ -164,12 +164,12 @@ body {
   transform: translateY(-3px);
 }
 
-.btn-projets {
+.btn-projets:hover {
   background-color: #d4ac0d;
   transform: translateY(-3px);
 }
 
-.btn-contact {
+.btn-contact:hover {
   background-color: #c0392b;
   transform: translateY(-3px);
 }
@@ -198,6 +198,7 @@ body {
   margin-bottom: 1rem;
 }
 
+
 .projets {
   max-width: 1000px;
   margin: auto;
@@ -218,9 +219,9 @@ body {
 
 .projet-card img {
   width: 200px;
-  height: 140px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 50px;
 }
 
 .projet-content h2 {
@@ -238,6 +239,7 @@ body {
     text-align: center;
   }
 }
+
 
 .contacts {
   max-width: 800px;
@@ -264,7 +266,7 @@ form input,
 form textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px ;
   border-radius: 5px;
 }
 
@@ -273,7 +275,6 @@ form button {
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 30px;
-  cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
 }
