@@ -39,10 +39,6 @@ body {
   font-weight:bold;
 }
 
-.nav-list a:hover {
-  text-decoration: underline;
-}
-
 #hamburger {
   display: none;
 }
