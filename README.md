@@ -7,7 +7,8 @@ Ce projet est une vitrine digitale qui présente mon **parcours**, mes **compét
 
 Le projet est composé de 4 pages principales :
 
-1. **index.html** → Page d’accueil  
+1. **index.html** → P
+age d’accueil  
    - Présentation générale  
    - Photo de profil  
    - À propos de moi  
