@@ -57,6 +57,7 @@ body {
   align-items: center;
   gap: 3rem;
   padding: 7rem 2rem;
+  
 }
 
 .photo img {
@@ -364,6 +365,7 @@ body {
 
     .btn {
         padding: 0.6rem 1.2rem;
+        display: none ;
     }
 
     .projet-card {
@@ -383,6 +385,7 @@ body {
         padding: 1rem;
         text-align: center;
     }
+
 
     .projet-content h2 {
         font-size: 1.2rem;
