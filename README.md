@@ -62,4 +62,4 @@ First Ambassadrice We Act / Rawbank
 *"Digitaliser avec stratégie, innover avec impact."*
 
 ## Licence
-© 2024 Rachel Fayila. Tous droits réservés.
+© 2025 Rachel Fayila. Tous droits réservés.
