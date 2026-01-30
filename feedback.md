@@ -2,7 +2,9 @@
 
 - ❌ **Balise auto-fermante incorrecte** : certaines balises doivent se terminer par `/>`. 💡 Exemple : `<img src='...' />`.
 
-- ❌ **Balise non fermée** : chaque balise ouvrante doit avoir une balise fermante.
+- ❌ **Balise `<script>` mal placée** : ne mettez pas vos scripts dans `<head>`. 💡 Placez-les avant `</body>`.
+
+- ❌ **Valeur d'attribut incorrecte ou dangereuse**.
 
 
 
@@ -18,4 +20,6 @@
 
 # Feedback Sections HTML
 
-✅ Toutes les sections contiennent un titre.
+- ❌ Dans projet.html : la balise <section> n°2 ne contient pas de titre (h1-h6).
+- ❌ Dans index.html : la balise <section> n°2 ne contient pas de titre (h1-h6).
+- ❌ Dans cv.html : la balise <section> n°2 ne contient pas de titre (h1-h6).
