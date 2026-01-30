@@ -1,77 +1,65 @@
-# Portfolio - Rachel Fayila
+# Portfolio Professionnel - Rachel Fayila
 
-Bienvenue sur mon **portfolio en ligne** !  
-Ce projet est une vitrine digitale qui présente mon **parcours**, mes **compétences** et mes **réalisations** en développement web et stratégie digitale.
+Bienvenue sur mon **portfolio professionnel en ligne** !  
+Ce projet est une vitrine digitale moderne qui présente mon **parcours entrepreneurial**, mes **compétences en stratégie digitale** et mes **réalisations en développement web**.
 
 ## Structure du projet
 
-Le projet est composé de 4 pages principales :
+4 pages principales :
 
-1. **index.html** → P
-age d’accueil  
-   - Présentation générale  
-   - Photo de profil  
-   - À propos de moi  
+Accueil - Présentation, statistiques et fonctions actuelles
 
-2. **cv.html** → Mon CV  
-   -  Éducation et formations  
-   -  Expériences professionnelles et projets  
-   -  Compétences techniques et soft skills  
+CV & Compétences - Formations, certifications, expériences professionnelles et compétences techniques
 
-3. **projets.html** → Mes projet
+Projets - 6 projets réalisés incluant agence digitale, sites web, e-commerce et dashboard
 
-### Projet Docteur Norman  
-- **Description :** Site vitrine développé en **HTML & CSS** pour pratiquer la mise en page et le design responsive.  
-- **Objectifs :** Organiser une structure propre et améliorer mes compétences en intégration.  
-- **Langages :** HTML, CSS  
-- **Outils :** Git, GitHub  
-
-### Maquette Netflix  
-- **Description :** Reproduction d’une interface type **Netflix** en **Figma**.  
-- **Objectifs :** Améliorer mes compétences en **UI/UX design**, travailler sur la cohérence visuelle et la hiérarchisation des contenus.  
-- **Outils :** Figma, GitHub  
-
-### 3. Campagne en ligne (Marketing Digital)  
-- **Description :** Création d’une **campagne digitale** dans le cadre de ma formation en marketing.  
-- **Contenu :** Définition du persona, stratégie digitale, plan de communication, choix des canaux, et suivi avec   indicateurs de performance.  
-- **Outils :** Google Analytics, réseaux sociaux, GitHub  
-
-## Compétences développées  
-- Développement front-end (**HTML, CSS**)  
-- Gestion de versions avec **Git & GitHub**  
-- Conception UI/UX avec **Figma**  
-- Élaboration de stratégie en **marketing digital**  
-
-4. **contact.html** → Me contacter  
-   - Email, téléphone et LinkedIn  
-   - Formulaire de contact  
-
-## Styles
-
-Toutes les pages utilisent un **seul fichier CSS global** :  
-`styles.css`  
-Il permet d’assurer une cohérence visuelle avec :  
-- Un design moderne et responsive  
-- Un menu de navigation uniforme  
-- Une grille pour les projets  
-- Un formulaire de contact stylisé  
+Contact - Formulaire de contact, coordonnées et informations pratiques
 
 ## Technologies utilisées
 
-- **HTML5** → Structure des pages  
-- **CSS3** → Mise en forme et responsive design  
-- **Git/GitHub** → Versioning et partage du code  
+HTML5 pour la structure sémantique
 
-## Contact
+Tailwind CSS pour le design responsive moderne
 
- Développé par **Rachel Fayila**
-Suivez-moi 
-- Télephone : +243-898914483 
-- ✉️ Email : [fayilarachel72@gmail.com](mailto:fayilarachel72@gmail.com)  
-- 🔗 LinkedIn : [linkedin.com/in/rachelfayila](https://www.linkedin.com/in/rachelfayila)  
-- © 2025 By Rachel Fayila
+JavaScript natif pour les interactions et animations
 
-## Auteur  
- **Rachel Fayila**  
-Étudiante en développement web| Passionnée par le numérique et l’innovation  
+Font Awesome pour les icônes
 
+Google Fonts (Inter) pour la typographie
+
+## Objectifs du portfolio
+
+Présenter un profil professionnel crédible
+
+Démontrer des compétences en stratégie digitale et développement web
+
+Attirer des opportunités professionnelles et partenariats
+
+Servir d'outil pour candidatures et prospection commerciale
+
+## Auteur
+Rachel Fayila - Entrepreneure digitale, Community Manager et Développeuse web en formation
+
+## Formation :
+
+Licence en Gestion des Entreprises (ISP/GOMBE)
+
+Formation en Développement Web (en cours)
+
+Certifications : Community Management, Entrepreneuriat & Leadership
+
+## Expériences :
+
+CEO & Fondatrice de LeadUp Digital
+
+Fondatrice de FayilaWax Store
+
+Responsable Coordination Opérationnelle chez Dark Business Hi-Tech
+
+First Ambassadrice We Act / Rawbank
+
+## Vision
+*"Digitaliser avec stratégie, innover avec impact."*
+
+## Licence
+© 2024 Rachel Fayila. Tous droits réservés.

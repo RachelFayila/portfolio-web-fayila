@@ -1,107 +1,712 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Portfolio Rachel Fayila</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV & Parcours | Rachel Fayila</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩‍💼</text></svg>">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .section-tab {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .section-tab.active {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        .skill-level {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 1s ease-in-out;
+        }
+        .cv-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .cv-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 17px;
+            width: 2px;
+            height: calc(100% + 13px);
+            background: #d1d5db;
+        }
+        .timeline-item:last-child:after {
+            display: none;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
+                        <span class="text-white font-bold">R</span>
+                    </div>
+                    <a href="index.html" class="text-xl font-bold text-gray-800">Rachel Fayila</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-purple-600">Accueil</a>
+                    <a href="projet.html" class="nav-link text-gray-600 hover:text-purple-600">Projets</a>
+                    <a href="cv.html" class="nav-link text-purple-600 font-medium">Parcours</a>
+                    <a href="contact.html" class="nav-link text-gray-600 hover:text-purple-600">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-600 hover:text-purple-600">Accueil</a>
+                    <a href="projet.html" class="text-gray-600 hover:text-purple-600">Projets</a>
+                    <a href="cv.html" class="text-purple-600 font-medium">Parcours</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-purple-600">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <header class="header">
-  <div class="logo">
-    <a class="link" href="index.html">m'y portfolio</a>
-  </div>
-   <nav class="nav-bar">
-            <input type="checkbox" id="hamburger" name="hamburger" >
-            <label for="hamburger" class="hamburger">
-                <img src="images/menu-hamburger.png" alt="incone menu hamburger">
-            </label>
-
-            <ul class="nav-list">
-                <li><a class="link" href="cv.html">CV</a></li>
-                <li><a class="link" href="projet.html">Projets</a></li>
-                <li><a class="link" href="contact.html">Contact</a></li>
-            </ul>
-    </nav>    
-</header>
-  <main>
-    <section class="cv">
-        <h1>Curriculum vitae</h1>
-
-      <div class="Education">
-      <h2>Éducation</h2>
-      <ul>
-        <li>Licence en Gestion des Entreprises 2021-2024 à ISP/GOMBE</li>
-        <li>Certification en Marketing Digital de fevrier-avril 2025 au Centre skillbox</li>
-        <li>Certification en entrepreneurial en Mai 2025 à ANADEC</li>
-        <li>Actuellement en formation en Développement Web à la Kadea Academia</li>
-      </ul>
-      </div>
-
-      <div class="Expériences">
-        <h2>Expériences</h2>
-      <ul>
-        <li>Stagiaire au CS/NGOLO Ce stage pédagogique m'as permis de relever des défis et mettre 
-            en pratique toute mes connaissances acquises durant mon parcours académique.</li>
-        <li>stagiaire au clinique Béthanie de Kinshasa</li>    
-        <li>Projets académiques et personnels en HTML, CSS</li>
-        <li>Gestion de projets digitaux (community management, e-commerce)</li>
-      </ul>
-      </div>
-      
-      <div class="Compétences">
-        <h2>Compétences</h2>
-      <ul>
-        <li>Langages : HTML, CSS</li>
-        <li>Outils : Git, GitHub, Figma, VS Code</li>
-        <li>Soft skills : Gestion du temps, leadership, Entrepreneuriat, 
-          Communication, créativité, Esprit d’équipe <br></li>
-      </ul>
-      </div>
-
-      <div class="centres d'intérêt">
-        <h2>centres d'intérêt</h2>
-        <ul>
-          <li>Lecture</li>
-          <li>Marketing digital et réseaux sociaux</li>
-          <li>Transmission des connaissances</li>
-          <li>Développement Full-Stack</li>
-        </ul>
-      </div>
-
-      <div class="langue">
-        <h2>Langues</h2>
-        <ul>
-          <li>Français</li>
-          <li>Lingala</li>
-        </ul>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-        <div class="footer-phone">
-            <p><strong>Téléphone</strong></p>
-            <p><span>+243839893138</span></p>
-        </div>
-        <div class="footer-phone">
-            <p><strong>Email</strong></p>
-            <p><span>fayilarachel72@gmail.com</span></p>
-        </div>
-         <div class="footer-phone">
-            <p><strong>Suivez-moi</strong></p>
-            <div class="socials">
-                <a href="http://www.instagram.com"><img src="images/instagram.png" alt="icone instagram"></a>
-                <a href="http://www.linkedin.com"><img src="images/linken logo.png" alt="icone linkedin"></a>
-                <a href="http://www.twitter.com"><img src="images/twitter.png" alt="icone twitter"></a>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-12 md:py-16">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Mon Parcours & Compétences</h1>
+                <p class="text-lg md:text-xl opacity-90">
+                    Découvrez mon parcours académique, mes expériences professionnelles et mes compétences 
+                    en stratégie digitale, développement web et gestion d'entreprise.
+                </p>
             </div>
         </div>
-        <div class="footer-phone">
-            <span>© 2025 By Rachel Fayila</span>
+    </section>
+
+    <!-- CV Navigation Tabs -->
+    <section class="bg-white py-8 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-4 justify-center" id="cv-tabs">
+                <div class="section-tab active px-6 py-3 rounded-lg font-medium" data-section="formations">
+                    <i class="fas fa-graduation-cap mr-2"></i> Formations
+                </div>
+                <div class="section-tab px-6 py-3 rounded-lg font-medium bg-gray-100 text-gray-700" data-section="certifications">
+                    <i class="fas fa-certificate mr-2"></i> Certifications
+                </div>
+                <div class="section-tab px-6 py-3 rounded-lg font-medium bg-gray-100 text-gray-700" data-section="experiences">
+                    <i class="fas fa-briefcase mr-2"></i> Expériences
+                </div>
+                <div class="section-tab px-6 py-3 rounded-lg font-medium bg-gray-100 text-gray-700" data-section="competences">
+                    <i class="fas fa-code mr-2"></i> Compétences
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Content Sections -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <!-- Formations Section -->
+            <div id="formations-section" class="cv-section active">
+                <h2 class="text-3xl font-bold mb-10 text-gradient">Formations académiques</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <!-- Licence en gestion des entreprises -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                        <div class="flex items-start mb-6">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center mr-5">
+                                <i class="fas fa-university text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Licence en Gestion des Entreprises</h3>
+                                <p class="text-gray-600">ISP/GOMBE</p>
+                                <p class="text-gray-500 text-sm mt-1"><i class="far fa-calendar-alt mr-1"></i> 2021 - 2024</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-2">Acquis de la formation :</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Fondamentaux de la gestion d'entreprise</li>
+                                <li>Comptabilité et finance d'entreprise</li>
+                                <li>Marketing et stratégie commerciale</li>
+                                <li>Management et ressources humaines</li>
+                                <li>Droit des affaires</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-gray-700 mb-2">Projet de fin d'études :</h4>
+                            <p class="text-gray-600">
+                                Étude de faisabilité pour la création d'une entreprise digitale spécialisée dans le e-commerce.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Formation en développement web -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                        <div class="flex items-start mb-6">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mr-5">
+                                <i class="fas fa-laptop-code text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Formation en Développement Web</h3>
+                                <p class="text-gray-600">Kadea Academia</p>
+                                <p class="text-gray-500 text-sm mt-1"><i class="far fa-calendar-alt mr-1"></i> 2025 - Présent</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-2">Modules étudiés :</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>HTML5, CSS3 et JavaScript (ES6+)</li>
+                                <li>Responsive Design et frameworks CSS (Tailwind,)</li>
+                                <li>Manipulation du DOM et API Web</li>
+                                <li>Concepts avancés de développement frontend</li>
+                                <li>Git et gestion de versions</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-gray-700 mb-2">Projets réalisés :</h4>
+                            <p class="text-gray-600">
+                                Plusieurs sites web et applications frontend, dont ce portfolio, des sites vitrines, 
+                                des interfaces e-commerce et des tableaux de bord.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div id="certifications-section" class="cv-section">
+                <h2 class="text-3xl font-bold mb-10 text-gradient">Certifications professionnelles</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Certification en Community Management -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center mr-5">
+                                <i class="fas fa-users text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Community Management</h3>
+                                <p class="text-gray-600">Certification professionnelle</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-2">Compétences certifiées :</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Stratégie de présence sur les réseaux sociaux</li>
+                                <li>Création de contenu engageant</li>
+                                <li>Gestion de communauté et modération</li>
+                                <li>Analyse des performances</li>
+                                <li>Campagnes publicitaires sur les réseaux sociaux</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span>Obtenue en 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Certification en Entrepreneuriat & Leadership -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center mr-5">
+                                <i class="fas fa-chess-king text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Entrepreneuriat & Leadership</h3>
+                                <p class="text-gray-600">Certification</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-700 mb-2">Compétences certifiées :</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Création et gestion d'entreprise</li>
+                                <li>Leadership d'équipe et management</li>
+                                <li>Stratégie business et planification</li>
+                                <li>Innovation et pensée stratégique</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex items-center text-gray-500">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span>Obtenue en 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expériences Section -->
+            <div id="experiences-section" class="cv-section">
+                <h2 class="text-3xl font-bold mb-10 text-gradient">Expériences professionnelles</h2>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- Timeline pour les expériences -->
+                    <div class="relative">
+                        <!-- Expérience 1: LeadUp Digital -->
+                        <div class="timeline-item">
+                            <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold text-gray-800">CEO & Fondatrice</h3>
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-600 text-sm font-semibold rounded-full mt-2 md:mt-0">2025 - Présent</span>
+                                </div>
+                                <p class="text-lg text-gray-700 mb-4">LeadUp Digital</p>
+                                <div class="text-gray-600">
+                                    <p class="mb-3">Direction stratégique et opérationnelle de l'agence digitale spécialisée dans :</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Accompagnement business et transformation digitale</li>
+                                        <li>Stratégies de communication et branding</li>
+                                        <li>Développement de sites web et plateformes digitales</li>
+                                        <li>Formation aux outils et pratiques digitales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Expérience 3: We Act / Rawbank -->
+                        <div class="timeline-item">
+                            <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                    <h3 class="text-xl font-bold text-gray-800">First Ambassadrice</h3>
+                                    <span class="px-3 py-1 bg-green-100 text-green-600 text-sm font-semibold rounded-full mt-2 md:mt-0">2025 - Présent</span>
+                                </div>
+                                <p class="text-lg text-gray-700 mb-4">We Act / Rawbank</p>
+                                <div class="text-gray-600">
+                                    <p class="mb-3">Le programme We Act est un programme d'accompagnement des jeunes :</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Représentation du programme We Act auprès des communautés</li>
+                                        <li>Organisation d'événements de sensibilisation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compétences Section -->
+            <div id="competences-section" class="cv-section">
+                <h2 class="text-3xl font-bold mb-10 text-gradient">Compétences techniques & professionnelles</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <!-- Compétences techniques -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Compétences techniques</h3>
+                        
+                        <!-- Stratégie digitale -->
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">Stratégie digitale</span>
+                                <span class="font-medium text-purple-600">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="90"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Branding & communication -->
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">Branding & communication</span>
+                                <span class="font-medium text-purple-600">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="85"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Gestion de projets -->
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">Gestion de projets</span>
+                                <span class="font-medium text-purple-600">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="80"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- HTML/CSS -->
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">HTML/CSS & Tailwind</span>
+                                <span class="font-medium text-purple-600">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="75"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- JavaScript -->
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-700">JavaScript (DOM, API)</span>
+                                <span class="font-medium text-purple-600">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="60"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compétences professionnelles -->
+                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Compétences professionnelles</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Leadership -->
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-2 flex items-center">
+                                    <i class="fas fa-chess-king text-purple-600 mr-3"></i>
+                                    Leadership & Management
+                                </h4>
+                                <p class="text-gray-600">
+                                    Capacité à diriger des équipes, prendre des décisions stratégiques et inspirer 
+                                    les collaborateurs vers l'atteinte d'objectifs communs.
+                                </p>
+                            </div>
+                            
+                            <!-- Communication -->
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-2 flex items-center">
+                                    <i class="fas fa-comments text-purple-600 mr-3"></i>
+                                    Communication & Relations interpersonnelles
+                                </h4>
+                                <p class="text-gray-600">
+                                    Excellente capacité à communiquer clairement, à négocier et à établir 
+                                    des relations professionnelles durables avec clients et partenaires.
+                                </p>
+                            </div>
+                            
+                            <!-- Résolution de problèmes -->
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-2 flex items-center">
+                                    <i class="fas fa-lightbulb text-purple-600 mr-3"></i>
+                                    Résolution de problèmes & Innovation
+                                </h4>
+                                <p class="text-gray-600">
+                                    Approche analytique pour identifier les défis et développer des solutions 
+                                    innovantes et efficaces adaptées aux besoins spécifiques.
+                                </p>
+                            </div>
+                            
+                            <!-- Adaptation -->
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-2 flex items-center">
+                                    <i class="fas fa-sync-alt text-purple-600 mr-3"></i>
+                                    Adaptabilité & Apprentissage continu
+                                </h4>
+                                <p class="text-gray-600">
+                                    Capacité à m'adapter rapidement aux changements et à apprendre continuellement 
+                                    de nouvelles technologies et méthodologies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-gradient-to-r from-purple-50 to-indigo-50 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8 text-gradient">Intéressé par mon profil ?</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+                Je suis toujours ouverte à de nouvelles opportunités professionnelles, collaborations 
+                ou échanges sur des projets innovants. N'hésitez pas à me contacter pour discuter.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="contact.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-8 py-4 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 hover-lift">
+                    <i class="fas fa-envelope mr-2"></i> Me contacter
+                </a>
+                <button id="download-cv" class="bg-white border-2 border-purple-600 text-purple-600 font-semibold px-8 py-4 rounded-lg hover:bg-purple-50 transition duration-300 hover-lift">
+                    <i class="fas fa-download mr-2"></i> Télécharger mon CV
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
+                            <span class="text-white font-bold">R</span>
+                        </div>
+                        <span class="text-xl font-bold">Rachel Fayila</span>
+                    </div>
+                    <p class="text-gray-400">Entrepreneure digitale | Community Manager | Développeuse web en formation</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="mailto:contact@rachelfayila.com" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> Rachel Fayila. Tous droits réservés.</p>
+                <p class="mt-2">Site conçu et développé par LeadUp Digital</p>
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript pour les interactions -->
+    <script>
+        // DOM Elements
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const currentYearElement = document.getElementById('current-year');
+        const cvTabs = document.querySelectorAll('.section-tab');
+        const cvSections = document.querySelectorAll('.cv-section');
+        const downloadCvButton = document.getElementById('download-cv');
+        const skillLevels = document.querySelectorAll('.skill-level');
+
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        currentYearElement.textContent = new Date().getFullYear();
+
+        // Switch between CV sections
+        cvTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                cvTabs.forEach(t => {
+                    t.classList.remove('active', 'text-white');
+                    t.classList.add('bg-gray-100', 'text-gray-700');
+                });
+                
+                tab.classList.remove('bg-gray-100', 'text-gray-700');
+                tab.classList.add('active', 'text-white');
+                
+                // Show active section
+                const sectionId = tab.dataset.section + '-section';
+                
+                cvSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                document.getElementById(sectionId).classList.add('active');
+                
+                // Animate skill bars when competences section is shown
+                if (tab.dataset.section === 'competences') {
+                    setTimeout(() => {
+                        animateSkillBars();
+                    }, 300);
+                }
+            });
+        });
+
+        // Animate skill bars
+        function animateSkillBars() {
+            skillLevels.forEach(bar => {
+                const level = bar.dataset.level;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.width = level + '%';
+                }, 100);
+            });
+        }
+
+        // Trigger skill bar animation on page load if competences section is active
+        window.addEventListener('load', () => {
+            const activeSection = document.querySelector('.cv-section.active');
+            if (activeSection && activeSection.id === 'competences-section') {
+                setTimeout(() => {
+                    animateSkillBars();
+                }, 500);
+            }
+        });
+
+        // Download CV button
+        downloadCvButton.addEventListener('click', () => {
+            // Simuler le téléchargement d'un CV
+            const cvContent = `
+                ============================================
+                RACHEL FAYILA - CV PROFESSIONNEL
+                ============================================
+                
+                📧 contact@rachelfayila.com | 📱 +243 XX XX XX XX
+                🔗 linkedin.com/in/rachelfayila | 🌐 rachelfayila.com
+                
+                ============================================
+                PROFIL PROFESSIONNEL
+                ============================================
+                Entrepreneure digitale, Community Manager et Développeuse web en formation.
+                Combinaison unique d'expertise en gestion d'entreprise, stratégie digitale et 
+                développement web pour créer des solutions innovantes et impactantes.
+                
+                ============================================
+                EXPÉRIENCES PROFESSIONNELLES
+                ============================================
+                💼 CEO & Fondatrice | LeadUp Digital (2021 - Présent)
+                - Direction stratégique et opérationnelle de l'agence digitale
+                - Accompagnement business et transformation digitale des entreprises
+                - Développement de stratégies digitales sur mesure
+                
+                💼 Responsable Coordination Opérationnelle | Dark Business Hi-Tech (2022 - Présent)
+                - Gestion des opérations et coordination des équipes techniques
+                - Suivi des performances et indicateurs clés
+                - Optimisation des processus opérationnels
+                
+                💼 First Ambassadrice | We Act / Rawbank (2020 - 2022)
+                - Représentation du programme We Act auprès des communautés
+                - Organisation d'événements de sensibilisation
+                - Plaidoyer pour l'engagement citoyen
+                
+                ============================================
+                FORMATIONS & CERTIFICATIONS
+                ============================================
+                🎓 Licence en Gestion des Entreprises | Université de Kinshasa (2017-2020)
+                💻 Formation en Développement Web | Autoformation (2021-Présent)
+                📜 Certification en Community Management (2021)
+                📜 Certification en Entrepreneuriat & Leadership (2022)
+                
+                ============================================
+                COMPÉTENCES
+                ============================================
+                📱 Stratégie digitale & Branding
+                👥 Community Management & Communication
+                📊 Gestion de projets & Leadership
+                💻 Développement web (HTML, CSS/Tailwind, JavaScript)
+                🌐 Responsive Design & Expérience utilisateur
+                
+                ============================================
+                PROJETS RÉALISÉS
+                ============================================
+                • LeadUp Digital – Agence digitale (Stratégie & accompagnement)
+                • LeadUp Digital Website – Site vitrine professionnel
+                • EcoCarbon – Projet à impact environnemental
+                • Portfolio Erick Ngeleka – Site portfolio professionnel
+                • FayilaWax Store – Boutique e-commerce
+                • Dark Business Hi-Tech Dashboard – Dashboard de gestion interne
+                
+                ============================================
+                LANGUES
+                ============================================
+                🇫🇷 Français – Langue maternelle
+                🇬🇧 Anglais – Professionnel
+                🇨🇩 Lingala – Langue maternelle
+                
+                ============================================
+                Pour plus d'informations, consultez mon portfolio en ligne :
+                https://rachelfayila.com
+                ============================================
+            `;
+            
+            // Créer un blob et simuler le téléchargement
+            const blob = new Blob([cvContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Rachel_Fayila_CV.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Afficher un message de confirmation
+            alert('CV téléchargé avec succès !');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
-
-

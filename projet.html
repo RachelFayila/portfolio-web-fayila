@@ -1,99 +1,691 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes Projets - Portfolio Rachel Fayila</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets | Rachel Fayila</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩‍💼</text></svg>">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        .project-category {
+            transition: all 0.3s ease;
+        }
+        .project-category.active {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .project-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-modal.active {
+            display: flex;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
+                        <span class="text-white font-bold">R</span>
+                    </div>
+                    <a href="index.html" class="text-xl font-bold text-gray-800">Rachel Fayila</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-purple-600">Accueil</a>
+                    <a href="projet.html" class="nav-link text-purple-600 font-medium">Projets</a>
+                    <a href="cv.html" class="nav-link text-gray-600 hover:text-purple-600">Parcours</a>
+                    <a href="contact.html" class="nav-link text-gray-600 hover:text-purple-600">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-600 hover:text-purple-600">Accueil</a>
+                    <a href="projet.html" class="text-purple-600 font-medium">Projets</a>
+                    <a href="cv.html" class="text-gray-600 hover:text-purple-600"> Parcours</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-purple-600">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<header class="header">
-  <div class="logo">
-    <a class="link" href="index.html">m'y portfolio</a>
-  </div>
-   <nav class="nav-bar">
-            <input type="checkbox" id="hamburger" name="hamburger" >
-            <label for="hamburger" class="hamburger">
-                <img src="images/menu-hamburger.png" alt="incone menu hamburger">
-            </label>
-
-            <ul class="nav-list">
-                <li><a class="link" href="cv.html">CV</a></li>
-                <li><a class="link" href="projet.html">Projets</a></li>
-                <li><a class="link" href="contact.html">Contact</a></li>
-            </ul>
-    </nav>    
-</header>
-
-  <main>
-    <section class="projets">
-      <h1>Mes Projets</h1>
-
-      <div class="projet-card">
-        <img src="images/image.png" alt="Capture du projet Kadea">
-        <div class="projet-content">
-          <h2>Projet Docteur Norman</h2>
-          <p>
-            Un site vitrine réalisé en HTML et CSS dans le cadre de ma formation à la kadea academia.
-             Ce projet m’a permis de pratiquer la création d’une structure web responsive et 
-             d’appliquer les bases du design d’interface utilisateur. <br>
-          </p>
-          <p><strong>Technologies :</strong> HTML5, CSS3, Github</p>
-        </div>
-      </div>
-
-      <div class="projet-card">
-        <img src="images/photo-du-projet.png" alt="Conception d’un projet sur Figma">
-        <div class="projet-content">
-          <h2>Maquette Netflix</h2>
-          <p>
-            Création d’une maquette interactive inspirée de Netflix à l’aide de Figma.
-            L’objectif était de reproduire une interface moderne tout en mettant 
-            l’accent sur la cohérence graphique, la hiérarchisation des contenus et 
-            l’expérience utilisateur (UX/UI). <br>
-          </p>
-          <p><strong>Technologies :</strong>Figma, Github</p>
-        </div>
-      </div>
-
-      <div class="projet-card">
-        <img src="images/image-de-campagne.png" alt="Plateforme digitale responsive">
-        <div class="projet-content">
-          <h2>Projet : Digital</h2>
-          <p>
-            Projet réalisé dans le cadre de ma formation en marketing digital au centre
-            SkillBox. J’ai conçu une campagne en ligne, incluant la définition 
-            du persona, la stratégie de communication digitale,le choix des canaux 
-            et l’évaluation des performances. <br>
-          </p>
-          <p><strong>Technologies :</strong>Publicité et réseaux sociaux, Création de contenu, Gestion
-          et organition</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
- <footer class="footer">
-        <div class="footer-phone">
-            <p><strong>Téléphone</strong></p>
-            <p><span>+243839893138</span></p>
-        </div>
-        <div class="footer-phone">
-            <p><strong>Email</strong></p>
-            <p><span>fayilarachel72@gmail.com</span></p>
-        </div>
-         <div class="footer-phone">
-            <p><strong>Suivez-moi</strong></p>
-            <div class="socials">
-                <a href="http://www.instagram.com"><img src="images/instagram.png" alt="icone instagram"></a>
-                <a href="http://www.linkedin.com"><img src="images/linken logo.png" alt="icone linkedin"></a>
-                <a href="http://www.twitter.com"><img src="images/twitter.png" alt="icone twitter"></a>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-12 md:py-16">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Mes Projets Réalisés</h1>
+                <p class="text-lg md:text-xl opacity-90">
+                    Découvrez une sélection de mes projets en stratégie digitale, développement web et entrepreneuriat. 
+                    Chaque réalisation combine expertise technique, vision stratégique et sens du détail.
+                </p>
             </div>
         </div>
-        <div class="footer-phone">
-            <span>© 2025 By Rachel Fayila</span>
+    </section>
+
+    <!-- Project Categories -->
+    <section class="bg-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4" id="project-categories">
+                <button class="project-category active px-6 py-2 rounded-full border border-purple-600 text-purple-600 font-medium" data-category="all">
+                    Tous les projets
+                </button>
+                <button class="project-category px-6 py-2 rounded-full border border-gray-300 text-gray-600 font-medium hover:border-purple-600 hover:text-purple-600" data-category="digital">
+                    Stratégie digitale
+                </button>
+                <button class="project-category px-6 py-2 rounded-full border border-gray-300 text-gray-600 font-medium hover:border-purple-600 hover:text-purple-600" data-category="web">
+                    Développement web
+                </button>
+                <button class="project-category px-6 py-2 rounded-full border border-gray-300 text-gray-600 font-medium hover:border-purple-600 hover:text-purple-600" data-category="ecommerce">
+                    E-commerce
+                </button>
+                <button class="project-category px-6 py-2 rounded-full border border-gray-300 text-gray-600 font-medium hover:border-purple-600 hover:text-purple-600" data-category="dashboard">
+                    Dashboard & outils
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                <!-- Projet 1: LeadUp Digital -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover-lift" data-category="digital">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-chart-line text-white text-5xl mb-4"></i>
+                            <h3 class="text-white text-xl font-bold">LeadUp Digital</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">LeadUp Digital</h3>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 text-xs font-semibold rounded-full">Stratégie digitale</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Agence digitale spécialisée dans l'accompagnement business et la transformation digitale des entreprises. 
+                            Développement de stratégies sur mesure pour accroître la visibilité et la croissance en ligne.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <button class="view-details-btn px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-300" data-project="1">
+                                Voir détails
+                            </button>
+                            <div class="text-gray-500 text-sm">
+                                <i class="fas fa-calendar-alt mr-1"></i> 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2: LeadUp Digital Website -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover-lift" data-category="web">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-laptop-code text-white text-5xl mb-4"></i>
+                            <h3 class="text-white text-xl font-bold">Site Web LeadUp</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">LeadUp Digital Website</h3>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 text-xs font-semibold rounded-full">Développement web</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Site vitrine professionnel pour l'agence LeadUp Digital. Design moderne et responsive avec intégration 
+                            d'un système de formulaire de contact et présentation des services offerts.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <button class="view-details-btn px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300" data-project="2">
+                                Voir détails
+                            </button>
+                            <div class="text-gray-500 text-sm">
+                                <i class="fas fa-calendar-alt mr-1"></i> 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3: EcoCarbon -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover-lift" data-category="digital">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-leaf text-white text-5xl mb-4"></i>
+                            <h3 class="text-white text-xl font-bold">EcoCarbon</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">EcoCarbon</h3>
+                            <span class="px-3 py-1 bg-green-100 text-green-600 text-xs font-semibold rounded-full">Impact environnemental</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Projet à impact environnemental visant à réduire l'empreinte carbone des entreprises. 
+                            Développement d'une plateforme de mesure et de compensation carbone avec stratégie de communication dédiée.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <button class="view-details-btn px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300" data-project="3">
+                                Voir détails
+                            </button>
+                            <div class="text-gray-500 text-sm">
+                                <i class="fas fa-calendar-alt mr-1"></i> 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 4: Portfolio Erick Ngeleka -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover-lift" data-category="web">
+                    <div class="h-48 bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-user-tie text-white text-5xl mb-4"></i>
+                            <h3 class="text-white text-xl font-bold">Portfolio Erick</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Portfolio Web Erick Ngeleka</h3>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-600 text-xs font-semibold rounded-full">Développement web</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Site portfolio professionnel pour un expert bancaire. Design élégant et fonctionnel 
+                            mettant en valeur son parcours, compétences et réalisations avec une navigation intuitive.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <button class="view-details-btn px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition duration-300" data-project="4">
+                                Voir détails
+                            </button>
+                            <div class="text-gray-500 text-sm">
+                                <i class="fas fa-calendar-alt mr-1"></i> 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 5: FayilaWax Store -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover-lift" data-category="ecommerce">
+                    <div class="h-48 bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-store text-white text-5xl mb-4"></i>
+                            <h3 class="text-white text-xl font-bold">FayilaWax Store</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">FayilaWax Store</h3>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-600 text-xs font-semibold rounded-full">E-commerce</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Boutique e-commerce spécialisée dans la vente de tissus wax africains. 
+                            Plateforme complète avec catalogue produits, système de paiement sécurisé et gestion des commandes.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <button class="view-details-btn px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition duration-300" data-project="5">
+                                Voir détails
+                            </button>
+                            <div class="text-gray-500 text-sm">
+                                <i class="fas fa-calendar-alt mr-1"></i> 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 6: Dark Business Hi-Tech Dashboard -->
+                <div class="project-card bg-white rounded-xl shadow-md overflow-hidden hover-lift" data-category="dashboard">
+                    <div class="h-48 bg-gradient-to-r from-gray-700 to-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-chart-bar text-white text-5xl mb-4"></i>
+                            <h3 class="text-white text-xl font-bold">Dashboard</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Dark Business Hi-Tech Dashboard</h3>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full">Dashboard & outils</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Dashboard de gestion interne pour suivre les performances opérationnelles et financières. 
+                            Interface intuitive avec visualisation de données en temps réel et rapports automatisés.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <button class="view-details-btn px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition duration-300" data-project="6">
+                                Voir détails
+                            </button>
+                            <div class="text-gray-500 text-sm">
+                                <i class="fas fa-calendar-alt mr-1"></i> 2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="project-modal">
+        <div class="bg-white rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-gray-800"></h2>
+                        <div id="modal-category" class="mt-2"></div>
+                    </div>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div id="modal-content" class="prose max-w-none">
+                    <!-- Le contenu sera inséré dynamiquement -->
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-gray-200 flex justify-between items-center">
+                    <div class="text-gray-500">
+                        <i class="fas fa-calendar-alt mr-1"></i> <span id="modal-date"></span>
+                    </div>
+                    <button id="close-modal-btn" class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-300">
+                        Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
+                            <span class="text-white font-bold">R</span>
+                        </div>
+                        <span class="text-xl font-bold">Rachel Fayila</span>
+                    </div>
+                    <p class="text-gray-400">Entrepreneure digitale | Community Manager | Développeuse web en formation</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/rachel-fayila-5b633633b/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fayila02?igsh=emppazdxbTU3bzh6" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> Rachel Fayila. Tous droits réservés.</p>
+                <p class="mt-2">Site conçu et développé par LeadUp Digital</p>
+            </div>
         </div>
     </footer>
+
+    <!-- JavaScript pour les interactions -->
+    <script>
+        // Données des projets
+        const projectsData = {
+            1: {
+                title: "LeadUp Digital",
+                category: "Stratégie digitale",
+                date: "2025",
+                color: "purple",
+                description: `
+                    <div class="mb-6">
+                        <p class="text-lg text-gray-700 mb-4">LeadUp Digital est une agence digitale que j'ai fondée, spécialisée dans l'accompagnement business et la transformation digitale des entreprises.</p>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Objectifs du projet</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Développer des stratégies digitales sur mesure pour les PME</li>
+                            <li>Accompagner les entreprises dans leur transition numérique</li>
+                            <li>Augmenter la visibilité et la croissance en ligne des clients</li>
+                            <li>Former les équipes aux outils et pratiques digitales</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Réalisations</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Définition de la stratégie digitale et du positionnement de l'agence</li>
+                            <li>Création d'une offre de services complète (audit, stratégie, formation)</li>
+                            <li>Développement d'une clientèle variée (startups, PME, entrepreneurs)</li>
+                            <li>Mise en place de processus de travail optimisés</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Technologies & Compétences</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full">Stratégie digitale</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full">Branding</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full">Gestion de projet</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full">Communication</span>
+                        </div>
+                    </div>
+                `
+            },
+            2: {
+                title: "LeadUp Digital Website",
+                category: "Développement web",
+                date: "2025",
+                color: "blue",
+                description: `
+                    <div class="mb-6">
+                        <p class="text-lg text-gray-700 mb-4">Site vitrine professionnel pour l'agence LeadUp Digital, conçu pour présenter les services de manière claire et convaincante.</p>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Objectifs du projet</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Créer une présence en ligne professionnelle pour l'agence</li>
+                            <li>Présenter clairement les services et l'expertise</li>
+                            <li>Générer des leads qualifiés via des formulaires de contact</li>
+                            <li>Optimiser l'expérience utilisateur sur tous les appareils</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Fonctionnalités</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Design responsive moderne et professionnel</li>
+                            <li>Présentation des services avec études de cas</li>
+                            <li>Système de formulaire de contact avec validation</li>
+                            <li>Blog intégré pour partager des conseils et actualités</li>
+                            <li>Optimisation SEO pour une meilleure visibilité</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Technologies utilisées</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full">HTML5</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full">CSS3/Tailwind</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full">Responsive Design</span>
+                        </div>
+                    </div>
+                `
+            },
+            3: {
+                title: "EcoCarbon",
+                category: "Projet à impact environnemental",
+                date: "2025",
+                color: "green",
+                description: `
+                    <div class="mb-6">
+                        <p class="text-lg text-gray-700 mb-4">EcoCarbon est une initiative visant à aider les entreprises à réduire leur empreinte carbone grâce à des solutions de mesure et compensation.</p>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Objectifs du projet</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Sensibiliser les entreprises à leur impact environnemental</li>
+                            <li>Fournir des outils de mesure d'empreinte carbone</li>
+                            <li>Proposer des solutions de compensation carbone</li>
+                            <li>Créer une communauté d'entreprises engagées pour l'environnement</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Réalisations</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Conception d'une méthodologie de mesure carbone simplifiée</li>
+                            <li>Développement d'une plateforme web de calcul d'empreinte</li>
+                            <li>Partenariats avec des projets de reforestation</li>
+                            <li>Campagne de sensibilisation auprès de 50+ entreprises</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Compétences mises en œuvre</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full">Stratégie RSE</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full">Communication</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full">Gestion de projet</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full">Partnerships</span>
+                        </div>
+                    </div>
+                `
+            },
+            4: {
+                title: "Portfolio Web Erick Ngeleka",
+                category: "Développement web",
+                date: "2025",
+                color: "amber",
+                description: `
+                    <div class="mb-6">
+                        <p class="text-lg text-gray-700 mb-4">Portfolio professionnel pour Erick Ngeleka, expert en communication, conçu pour mettre en valeur son parcours et ses compétences.</p>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Objectifs du projet</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Présenter de manière attractive le parcours professionnel</li>
+                            <li>Mettre en valeur les compétences et réalisations</li>
+                            <li>Faciliter la prise de contact pour des opportunités professionnelles</li>
+                            <li>Créer une identité visuelle cohérente avec le personal branding</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Fonctionnalités</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Design élégant et professionnel avec une navigation intuitive</li>
+                            <li>Section "À propos" détaillant le parcours et la philosophie</li>
+                            <li>Galerie de projets réalisés avec descriptions détaillées</li>
+                            <li>Section compétences avec visualisation graphique</li>
+                            <li>Formulaire de contact intégré avec validation</li>
+                            <li>Design responsive optimisé pour mobile</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Technologies utilisées</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-amber-100 text-amber-600 rounded-full">HTML5</span>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-600 rounded-full">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-600 rounded-full">JavaScript Vanilla</span>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-600 rounded-full">Responsive Design</span>
+                        </div>
+                    </div>
+                `
+            },
+            5: {
+                title: "FayilaWax Store",
+                category: "E-commerce",
+                date: "2025",
+                color: "pink",
+                description: `
+                    <div class="mb-6">
+                        <p class="text-lg text-gray-700 mb-4">Boutique e-commerce spécialisée dans la vente de tissus wax africains, offrant une expérience d'achat en ligne fluide et sécurisée.</p>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Objectifs du projet</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Créer une plateforme e-commerce pour vendre des tissus wax</li>
+                            <li>Offrir une expérience d'achat intuitive et sécurisée</li>
+                            <li>Gérer efficacement l'inventaire et les commandes</li>
+                            <li>Promouvoir les tissus traditionnels africains à un public international</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Fonctionnalités</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Catalogue produits avec filtres par catégorie, couleur et motif</li>
+                            <li>Panier d'achat avec gestion des quantités</li>
+                            <li>Système de paiement sécurisé (Stripe intégré)</li>
+                            <li>Espace client avec suivi des commandes</li>
+                            <li>Backoffice pour la gestion des produits et commandes</li>
+                            <li>Blog intégré pour partager des inspirations mode</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Technologies utilisées</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full">HTML/CSS</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full">PHP/MySQL</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full">Stripe API</span>
+                        </div>
+                    </div>
+                `
+            },
+            6: {
+                title: "Dark Business Hi-Tech Dashboard",
+                category: "Dashboard & outils",
+                date: "2025",
+                color: "gray",
+                description: `
+                    <div class="mb-6">
+                        <p class="text-lg text-gray-700 mb-4">Dashboard de gestion interne permettant de suivre les performances opérationnelles et financières de Dark Business Hi-Tech.</p>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Objectifs du projet</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Centraliser les données opérationnelles et financières</li>
+                            <li>Visualiser les indicateurs de performance en temps réel</li>
+                            <li>Automatiser la génération de rapports</li>
+                            <li>Faciliter la prise de décision stratégique</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Fonctionnalités</h3>
+                        <ul class="list-disc pl-5 mb-6 text-gray-700">
+                            <li>Tableau de bord avec indicateurs clés (KPI)</li>
+                            <li>Graphiques interactifs pour visualiser les tendances</li>
+                            <li>Modules pour la gestion des projets, ressources et finances</li>
+                            <li>Système de notifications pour les alertes importantes</li>
+                            <li>Export des données en différents formats (PDF, Excel)</li>
+                            <li>Interface personnalisable selon le rôle de l'utilisateur</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Technologies utilisées</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full">JavaScript</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full">Chart.js</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full">API REST</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full">Tailwind CSS</span>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        // DOM Elements
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const currentYearElement = document.getElementById('current-year');
+        const projectCategories = document.querySelectorAll('.project-category');
+        const projectCards = document.querySelectorAll('.project-card');
+        const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+        const projectModal = document.getElementById('project-modal');
+        const closeModal = document.getElementById('close-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const modalTitle = document.getElementById('modal-title');
+        const modalCategory = document.getElementById('modal-category');
+        const modalContent = document.getElementById('modal-content');
+        const modalDate = document.getElementById('modal-date');
+
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        currentYearElement.textContent = new Date().getFullYear();
+
+        // Filter projects by category
+        projectCategories.forEach(category => {
+            category.addEventListener('click', () => {
+                // Update active category
+                projectCategories.forEach(c => {
+                    c.classList.remove('active', 'text-white', 'border-purple-600', 'text-purple-600');
+                    c.classList.add('border-gray-300', 'text-gray-600');
+                });
+                
+                category.classList.remove('border-gray-300', 'text-gray-600');
+                category.classList.add('active', 'text-white');
+                
+                const selectedCategory = category.dataset.category;
+                
+                // Show/hide projects based on category
+                projectCards.forEach(card => {
+                    if (selectedCategory === 'all' || card.dataset.category === selectedCategory) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Show project details in modal
+        viewDetailsBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const projectId = btn.dataset.project;
+                const project = projectsData[projectId];
+                
+                modalTitle.textContent = project.title;
+                modalCategory.innerHTML = `<span class="px-3 py-1 bg-${project.color}-100 text-${project.color}-600 text-sm font-semibold rounded-full">${project.category}</span>`;
+                modalContent.innerHTML = project.description;
+                modalDate.textContent = project.date;
+                
+                projectModal.classList.add('active');
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            projectModal.classList.remove('active');
+        });
+        
+        closeModalBtn.addEventListener('click', () => {
+            projectModal.classList.remove('active');
+        });
+        
+        // Close modal when clicking outside content
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                projectModal.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>

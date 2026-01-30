@@ -3,75 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Portfolio Rachel Fayila</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Rachel Fayila | Entrepreneure Digitale & Développeuse Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩‍💼</text></svg>">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        .section-divider {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .profile-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .profile-image-container:hover .profile-image {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body>
-
-    <header class="header">
-        <div class="logo">
-            <a class="link color-black-bold" href="index.html">m'y portfolio</a>
-        </div>
-
-        <nav class="nav-bar">
-            <input type="checkbox" id="hamburger" name="hamburger" >
-            <label for="hamburger" class="hamburger">
-                <img src="images/menu-hamburger.png" alt="incone menu hamburger">
-            </label>
-
-            <ul class="nav-list">
-                <li><a class="link" href="cv.html">CV</a></li>
-                <li><a class="link" href="projet.html">Projets</a></li>
-                <li><a class="link" href="contact.html">Contact</a></li>
-            </ul>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
+                        <span class="text-white font-bold">R</span>
+                    </div>
+                    <a href="index.html" class="text-xl font-bold text-gray-800">Rachel Fayila</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-purple-600 font-medium">Accueil</a>
+                    <a href="projet.html" class="nav-link text-gray-600 hover:text-purple-600">Projets</a>
+                    <a href="cv.html" class="nav-link text-gray-600 hover:text-purple-600">Parcours</a>
+                    <a href="contact.html" class="nav-link text-gray-600 hover:text-purple-600">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-purple-600 font-medium">Accueil</a>
+                    <a href="projet.html" class="text-gray-600 hover:text-purple-600">Projets</a>
+                    <a href="cv.html" class="text-gray-600 hover:text-purple-600">Parcours</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-purple-600">Contact</a>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="photo">
-                <img src="images/photo-de-rache.png" alt="Photo Fayila">
-            </div>
-            <div class="about">
-                <h1>Rachel Fayila</h1>
-                <h2>Développeuse web Full-stack</h2>
-               <p>
-                    Passionnée par le numérique, je suis Rachel Fayila, 
-                    développeuse web dotée d’une vision créative et innovante.
-                    Mon objectif ne se limite pas au code ; je conçois des expériences 
-                    digitales qui inspirent, simplifient la vie des utilisateurs et apportent
-                     une véritable valeur ajoutée aux projets que je réalise..<br>
-                </p>
-                <div class="btn-group">
-                    <button class="btn btn-cv">CV</button>
-                    <button class="btn btn-projet">Projets</button>
-                    <button class="btn btn-contact">Contact</button>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Rachel Fayila</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Entrepreneure digitale & Développeuse web en formation</h2>
+                    <p class="text-lg mb-8 opacity-90">
+                        Passionnée par la transformation digitale et l'innovation, je combine expertise en gestion d'entreprise, 
+                        stratégie digitale et développement web pour créer des solutions impactantes. Mon objectif : 
+                        accompagner les entreprises dans leur transition digitale avec une approche stratégique et technique.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="projet.html" class="bg-white text-purple-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300 hover-lift">
+                            Voir mes projets <i class="ml-2 fas fa-arrow-right"></i>
+                        </a>
+                        <a href="contact.html" class="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition duration-300 hover-lift">
+                            Me contacter
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <!-- Section d'image de profil modifiée -->
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 shadow-2xl overflow-hidden profile-image-container">
+                            <!-- IMAGE DE PROFIL - Deux options -->
+                            
+                            <!-- OPTION 1: Image personnalisée -->
+                            <!-- Remplacez "rachel-profile.jpg" par le chemin de votre image -->
+                            <img 
+                                src="images/fayila.jpg" 
+                                alt="Rachel Fayila - Entrepreneure digitale et développeuse web"
+                                class="profile-image"
+                                onerror="this.style.display='none'; document.getElementById('profile-placeholder').style.display='flex';"
+                            >
+                            
+                            <!-- OPTION 2: Placeholder par défaut (s'affiche si l'image ne charge pas) -->
+                            <div id="profile-placeholder" class="w-full h-full flex items-center justify-center" style="display: none;">
+                                <div class="text-center">
+                                    <span class="text-6xl md:text-8xl">👩‍💼</span>
+                                    <p class="mt-2 text-white text-sm">Photo de profil</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white text-gray-800 p-4 rounded-lg shadow-lg max-w-xs">
+                            <p class="font-semibold text-purple-600">💡 Vision</p>
+                            <p class="text-sm mt-1">"Digitaliser avec stratégie, innover avec impact."</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="footer">
-        <div class="footer-phone">
-            <p><strong>Téléphone</strong></p>
-            <p><span>+243839893138</span></p>
-        </div>
-        <div class="footer-phone">
-            <p><strong>Email</strong></p>
-            <p><span>fayilarachel72@gmail.com</span></p>
-        </div>
-         <div class="footer-phone">
-            <p><strong>Suivez-moi</strong></p>
-            <div class="socials">
-                <a href="http://www.instagram.com"><img src="images/instagram.png" alt="icone instagram"></a>
-                <a href="http://www.linkedin.com"><img src="images/linken logo.png" alt="icone linkedin"></a>
-                <a href="http://www.twitter.com"><img src="images/twitter.png" alt="icone twitter"></a>
+    <!-- Statistics & Highlights -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-8 rounded-xl bg-gradient-to-br from-purple-50 to-indigo-50 hover-lift">
+                    <div class="text-4xl font-bold text-purple-600 mb-2" id="stat-1">2+</div>
+                    <div class="text-lg font-semibold text-gray-700 mb-1">Entreprises fondées</div>
+                    <p class="text-gray-600">LeadUp Digital & FayilaWax Store</p>
+                </div>
+                <div class="p-8 rounded-xl bg-gradient-to-br from-pink-50 to-rose-50 hover-lift">
+                    <div class="text-4xl font-bold text-pink-600 mb-2" id="stat-2">5+</div>
+                    <div class="text-lg font-semibold text-gray-700 mb-1">Projets réalisés</div>
+                    <p class="text-gray-600">Sites web, e-commerce, dashboard</p>
+                </div>
+                <div class="p-8 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 hover-lift">
+                    <div class="text-4xl font-bold text-blue-600 mb-2" id="stat-3">3</div>
+                    <div class="text-lg font-semibold text-gray-700 mb-1">Certifications</div>
+                    <p class="text-gray-600">Community Management, Entrepreneuriat & Leadership</p>
+                </div>
             </div>
         </div>
-        <div class="footer-phone">
-            <span>© 2025 By Rachel Fayila</span>
+    </section>
+
+    <!-- Current Roles -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gradient">Fonctions actuelles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center mb-6">
+                        <i class="fas fa-crown text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">CEO & Fondatrice</h3>
+                    <p class="text-gray-600 mb-4">LeadUp Digital</p>
+                    <p class="text-gray-600">Direction stratégique et opérationnelle de l'agence digitale spécialisée en accompagnement business et transformation digitale.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Responsable Coordination & Opérationnelle</h3>
+                    <p class="text-gray-600 mb-4">Dark Business Hi-Tech</p>
+                    <p class="text-gray-600">Gestion des opérations et coordination des équipes pour des projets technologiques innovants.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center mb-6">
+                        <i class="fas fa-hands-helping text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">First Ambassadrice</h3>
+                    <p class="text-gray-600 mb-4">We Act / Rawbank</p>
+                    <p class="text-gray-600">Le programme We Act est un programme d'accompagnement des jeunes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8 text-gradient">Prêt à collaborer sur un projet innovant ?</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+                Que vous ayez besoin d'une stratégie digitale, d'un site web professionnel ou d'un accompagnement business, 
+                je suis à votre écoute pour transformer vos idées en réalité.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="projet.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-8 py-4 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 hover-lift">
+                    <i class="fas fa-code mr-2"></i> Voir mes projets
+                </a>
+                <a href="cv.html" class="bg-white border-2 border-purple-600 text-purple-600 font-semibold px-8 py-4 rounded-lg hover:bg-purple-50 transition duration-300 hover-lift">
+                    <i class="fas fa-file-alt mr-2"></i> Consulter mon CV
+                </a>
+                <a href="contact.html" class="bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold px-8 py-4 rounded-lg hover:from-pink-600 hover:to-rose-600 transition duration-300 hover-lift">
+                    <i class="fas fa-envelope mr-2"></i> Me contacter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
+                            <span class="text-white font-bold">R</span>
+                        </div>
+                        <span class="text-xl font-bold">Rachel Fayila</span>
+                    </div>
+                    <p class="text-gray-400">Entrepreneure digitale | Community Manager | Développeuse web en formation</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/rachel-fayila-5b633633b/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fayila02?igsh=emppazdxbTU3bzh6" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> Rachel Fayila. Tous droits réservés.</p>
+                <p class="mt-2">Site conçu et développé par LeadUp Digital</p>
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript pour les interactions -->
+    <script>
+        // DOM Elements
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const currentYearElement = document.getElementById('current-year');
+        const stat1 = document.getElementById('stat-1');
+        const stat2 = document.getElementById('stat-2');
+        const stat3 = document.getElementById('stat-3');
+        
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Set current year in footer
+        currentYearElement.textContent = new Date().getFullYear();
+        
+        // Animated counters for statistics
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const increment = target / (duration / 16); // 60fps
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + "+";
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + "+";
+                }
+            }, 16);
+        }
+        
+        // Trigger counter animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                animateCounter(stat1, 2, 1000);
+                animateCounter(stat2, 5, 1000);
+                animateCounter(stat3, 3, 1000);
+            }, 500);
+            
+            // Afficher le placeholder si aucune image n'est chargée
+            const profileImg = document.querySelector('.profile-image');
+            if (profileImg && !profileImg.complete) {
+                // Si l'image n'est pas encore chargée, vérifier après un délai
+                setTimeout(() => {
+                    if (profileImg.naturalHeight === 0) {
+                        // Image non chargée, afficher le placeholder
+                        profileImg.style.display = 'none';
+                        document.getElementById('profile-placeholder').style.display = 'flex';
+                    }
+                }, 1000);
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
