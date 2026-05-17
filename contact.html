@@ -1,606 +1,77 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Rachel Fayila</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩‍💼</text></svg>">
-    <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .text-gradient {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .hover-lift {
-            transition: transform 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #667eea;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .input-error {
-            border-color: #f87171 !important;
-        }
-        .input-success {
-            border-color: #10b981 !important;
-        }
-        .error-message {
-            color: #f87171;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-        }
-        .success-message {
-            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
-            color: white;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin-top: 1rem;
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacter Rachel Fayila pour un projet, une collaboration ou une opportunité professionnelle.">
+  <title>Contact | Rachel Fayila</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{sans:["Inter","sans-serif"]},colors:{premium:{bg:"#0B1120",card:"#111827",text:"#F9FAFB",muted:"#94A3B8",accent:"#C8A96B",button:"#2563EB"}}}}};</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Navigation -->
-    <header class="sticky top-0 z-50 bg-white shadow-sm">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
-                        <span class="text-white font-bold">R</span>
-                    </div>
-                    <a href="index.html" class="text-xl font-bold text-gray-800">Rachel Fayila</a>
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link text-gray-600 hover:text-purple-600">Accueil</a>
-                    <a href="projet.html" class="nav-link text-gray-600 hover:text-purple-600">Projets</a>
-                    <a href="cv.html" class="nav-link text-gray-600 hover:text-purple-600">CV & Parcours</a>
-                    <a href="contact.html" class="nav-link text-purple-600 font-medium">Contact</a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="index.html" class="text-gray-600 hover:text-purple-600">Accueil</a>
-                    <a href="projet.html" class="text-gray-600 hover:text-purple-600">Projets</a>
-                    <a href="cv.html" class="text-gray-600 hover:text-purple-600">Parcours</a>
-                    <a href="contact.html" class="text-purple-600 font-medium">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<body class="bg-slate-50 text-slate-950 antialiased transition-colors duration-300 dark:bg-premium-bg dark:text-premium-text">
+  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/75 backdrop-blur-2xl dark:border-white/10 dark:bg-premium-bg/75">
+    <nav class="mx-auto flex h-20 max-w-6xl items-center justify-between px-5">
+      <a class="flex items-center gap-3 font-black" href="index.html"><span class="grid h-10 w-10 place-items-center rounded-2xl bg-premium-accent text-sm font-black text-premium-bg">RF</span><span>Rachel Fayila</span></a>
+      <div class="absolute left-5 right-5 top-20 hidden rounded-3xl border border-slate-200 bg-white p-3 shadow-2xl md:static md:flex md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none dark:border-white/10 dark:bg-premium-card md:dark:bg-transparent" data-nav-links>
+        <a class="block rounded-full px-4 py-3 text-sm font-bold text-slate-600 md:py-2 dark:text-premium-muted" href="index.html">Accueil</a>
+        <a class="block rounded-full px-4 py-3 text-sm font-bold text-slate-600 md:py-2 dark:text-premium-muted" href="projet.html">Projets</a>
+        <a class="block rounded-full px-4 py-3 text-sm font-bold text-slate-600 md:py-2 dark:text-premium-muted" href="cv.html">Parcours</a>
+        <a class="block rounded-full px-4 py-3 text-sm font-bold text-slate-950 md:py-2 dark:bg-white/10 dark:text-white" href="contact.html">Contact</a>
+      </div>
+      <div class="flex gap-2"><button class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white dark:border-white/10 dark:bg-premium-card" data-theme-toggle aria-label="Activer le mode sombre"><i class="fa-solid fa-moon"></i></button><button class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white md:hidden dark:border-white/10 dark:bg-premium-card" data-menu-toggle aria-expanded="false" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars"></i></button></div>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient text-white">
-        <div class="container mx-auto px-4 py-12 md:py-16">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Contactez-moi</h1>
-                <p class="text-lg md:text-xl opacity-90">
-                    Vous avez un projet, une question ou souhaitez collaborer ? 
-                    N'hésitez pas à me contacter via ce formulaire. Je vous répondrai dans les plus brefs délais.
-                </p>
-            </div>
-        </div>
+  <main>
+    <section class="mx-auto max-w-6xl px-5 py-16 md:py-24" data-reveal>
+      <span class="text-xs font-black uppercase tracking-[0.18em] text-premium-accent">Contact</span>
+      <h1 class="mt-4 max-w-3xl text-5xl font-black leading-none md:text-2xl">Discutons d'une opportunité</h1>
+      <p class="mt-5 max-w-xl text-slate-600 dark:text-premium-muted">Projet web, collaboration, recrutement ou accompagnement digital.</p>
     </section>
 
-    <!-- Contact Section -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Envoyez-moi un message</h2>
-                    
-                    <form id="contact-form" class="space-y-6">
-                        <!-- Nom -->
-                        <div>
-                            <label for="name" class="block text-gray-700 font-medium mb-2">
-                                Nom complet <span class="text-red-500">*</span>
-                            </label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                placeholder="Votre nom et prénom"
-                            >
-                            <div id="name-error" class="error-message"></div>
-                        </div>
-                        
-                        <!-- Email -->
-                        <div>
-                            <label for="email" class="block text-gray-700 font-medium mb-2">
-                                Adresse email <span class="text-red-500">*</span>
-                            </label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                placeholder="votre.email@exemple.com"
-                            >
-                            <div id="email-error" class="error-message"></div>
-                        </div>
-                        
-                        <!-- Sujet -->
-                        <div>
-                            <label for="subject" class="block text-gray-700 font-medium mb-2">
-                                Sujet
-                            </label>
-                            <select 
-                                id="subject" 
-                                name="subject"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                            >
-                                <option value="" selected disabled>Sélectionnez un sujet</option>
-                                <option value="projet">Demande de projet / Collaboration</option>
-                                <option value="emploi">Opportunité professionnelle</option>
-                                <option value="partenariat">Proposition de partenariat</option>
-                                <option value="information">Demande d'information</option>
-                                <option value="autre">Autre</option>
-                            </select>
-                            <div id="subject-error" class="error-message"></div>
-                        </div>
-                        
-                        <!-- Message -->
-                        <div>
-                            <label for="message" class="block text-gray-700 font-medium mb-2">
-                                Message <span class="text-red-500">*</span>
-                            </label>
-                            <textarea 
-                                id="message" 
-                                name="message"
-                                rows="6"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                placeholder="Décrivez votre projet, demande ou question..."
-                            ></textarea>
-                            <div id="message-error" class="error-message"></div>
-                        </div>
-                        
-                        <!-- Submit Button -->
-                        <button 
-                            type="submit" 
-                            id="submit-btn"
-                            class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300"
-                        >
-                            <span id="submit-text">Envoyer le message</span>
-                            <span id="submit-loading" class="hidden">
-                                <i class="fas fa-spinner fa-spin mr-2"></i> Envoi en cours...
-                            </span>
-                        </button>
-                        
-                        <!-- Success Message -->
-                        <div id="success-message" class="success-message">
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-xl mr-3"></i>
-                                <div>
-                                    <p class="font-bold">Message envoyé avec succès !</p>
-                                    <p class="text-sm opacity-90 mt-1">Je vous répondrai dans les plus brefs délais.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <section class="mx-auto grid max-w-6xl gap-6 px-5 pb-20 lg:grid-cols-[1.1fr_.9fr]">
+      <article class="rounded-[2rem] border border-slate-200 bg-white/80 p-7 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-premium-card/80" data-reveal>
+        <h2 class="text-3xl font-black">Message direct</h2>
+        <form class="mt-6" name="contact-rachel-fayila" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-contact-form>
+          <input type="hidden" name="form-name" value="contact-rachel-fayila">
+          <p class="absolute -left-[9999px] opacity-0"><label>Ne pas remplir <input name="bot-field"></label></p>
+          <div class="grid gap-4 md:grid-cols-2">
+            <label class="grid gap-2 font-bold">Nom<input class="h-12 rounded-2xl border border-slate-200 bg-white px-4 outline-none transition focus:border-premium-accent focus:ring-4 focus:ring-[#C8A96B]/10 dark:border-white/10 dark:bg-premium-bg dark:text-white dark:placeholder:text-premium-muted" name="name" type="text" autocomplete="name" minlength="2" required placeholder="Votre nom"></label>
+            <label class="grid gap-2 font-bold">Email<input class="h-12 rounded-2xl border border-slate-200 bg-white px-4 outline-none transition focus:border-premium-accent focus:ring-4 focus:ring-[#C8A96B]/10 dark:border-white/10 dark:bg-premium-bg dark:text-white dark:placeholder:text-premium-muted" name="email" type="email" autocomplete="email" required placeholder="votre.email@gmail.com"></label>
+            <label class="grid gap-2 font-bold md:col-span-2">Sujet<select class="h-12 rounded-2xl border border-slate-200 bg-white px-4 text-slate-950 outline-none transition focus:border-premium-accent focus:ring-4 focus:ring-[#C8A96B]/10 dark:border-white/10 dark:bg-premium-bg dark:text-white" name="subject" required>
+              <option class="bg-white text-slate-950 dark:bg-premium-card dark:text-white" value="">Choisir un sujet</option>
+              <option class="bg-white text-slate-950 dark:bg-premium-card dark:text-white">Projet web</option>
+              <option class="bg-white text-slate-950 dark:bg-premium-card dark:text-white">Opportunité professionnelle</option>
+              <option class="bg-white text-slate-950 dark:bg-premium-card dark:text-white">Collaboration stratégique</option>
+              <option class="bg-white text-slate-950 dark:bg-premium-card dark:text-white">Community management</option>
+              <option class="bg-white text-slate-950 dark:bg-premium-card dark:text-white">Autre demande</option>
+            </select></label>
+            <label class="grid gap-2 font-bold md:col-span-2">Message<textarea class="min-h-36 rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-premium-accent focus:ring-4 focus:ring-[#C8A96B]/10 dark:border-white/10 dark:bg-premium-bg dark:text-white dark:placeholder:text-premium-muted" name="message" minlength="10" required placeholder="Votre message..."></textarea></label>
+          </div>
+          <button class="mt-5 inline-flex h-12 items-center gap-2 rounded-full bg-premium-button px-6 font-extrabold text-white transition hover:bg-blue-700" type="submit"><i class="fa-solid fa-paper-plane"></i> Envoyer</button>
+          <div class="hidden" data-form-message role="status" aria-live="polite"></div>
+        </form>
+      </article>
 
-                <!-- Contact Information -->
-                <div>
-                    <h2 class="text-2xl font-bold text-gray-800 mb-8 text-gradient">Informations de contact</h2>
-                    
-                    <div class="space-y-8">
-                        <!-- Coordonnées -->
-                        <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 flex items-center justify-center mr-4">
-                                    <i class="fas fa-envelope text-purple-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-bold text-gray-800 mb-2">Email</h3>
-                                    <p class="text-gray-600">fayilamayolarachel@gmail.com</p>
-                                    <p class="text-gray-500 text-sm mt-1">Réponse sous 24-48 heures</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Réseaux sociaux -->
-                        <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-100 to-cyan-100 flex items-center justify-center mr-4">
-                                    <i class="fas fa-share-alt text-blue-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-bold text-gray-800 mb-4">Réseaux sociaux</h3>
-                                    <div class="flex space-x-4">
-                                        <a href="https://www.linkedin.com/in/rachel-fayila-5b633633b/" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition duration-300">
-                                            <i class="fab fa-linkedin-in text-lg"></i>
-                                        </a>
-                                        <a href="https://www.instagram.com/fayila02?igsh=emppazdxbTU3bzh6" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-pink-50 hover:text-pink-600 transition duration-300">
-                                            <i class="fab fa-instagram text-lg"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Disponibilité -->
-                        <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 flex items-center justify-center mr-4">
-                                    <i class="fas fa-calendar-check text-green-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-bold text-gray-800 mb-2">Disponibilités</h3>
-                                    <p class="text-gray-600">Réunions en ligne possibles du lundi au vendredi</p>
-                                    <p class="text-gray-500 text-sm mt-1">9h00 - 18h00 (heure locale)</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Services -->
-                        <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                            <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 flex items-center justify-center mr-4">
-                                    <i class="fas fa-cogs text-amber-600 text-xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-bold text-gray-800 mb-3">Services proposés</h3>
-                                    <ul class="text-gray-600 space-y-2">
-                                        <li class="flex items-center">
-                                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                                            Conseil en stratégie digitale
-                                        </li>
-                                        <li class="flex items-center">
-                                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                                            Développement de sites web
-                                        </li>
-                                        <li class="flex items-center">
-                                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                                            Community Management
-                                        </li>
-                                        <li class="flex items-center">
-                                            <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
-                                            Accompagnement business
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <aside class="rounded-[2rem] border border-slate-200 bg-white/80 p-7 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-premium-card/80" data-reveal>
+        <h2 class="text-3xl font-black">Coordonnées</h2>
+        <div class="mt-6 grid gap-3">
+          <a class="flex items-center gap-4 rounded-3xl border border-slate-200 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5" href="mailto:fayilamayolarachel@gmail.com"><i class="grid h-11 w-11 place-items-center rounded-2xl bg-premium-accent text-premium-bg fa-solid fa-envelope"></i><span><strong>Email</strong><br><span class="text-sm text-slate-600 dark:text-premium-muted">fayilamayolarachel@gmail.com</span></span></a>
+          <a class="flex items-center gap-4 rounded-3xl border border-slate-200 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5" href="https://www.linkedin.com/in/rachel-fayila-5b633633b/" target="_blank" rel="noreferrer"><i class="grid h-11 w-11 place-items-center rounded-2xl bg-premium-accent text-premium-bg fa-brands fa-linkedin-in"></i><span><strong>LinkedIn</strong><br><span class="text-sm text-slate-600 dark:text-premium-muted">Profil professionnel</span></span></a>
+          <a class="flex items-center gap-4 rounded-3xl border border-slate-200 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5" href="https://www.instagram.com/fayila02?igsh=emppazdxbTU3bzh6" target="_blank" rel="noreferrer"><i class="grid h-11 w-11 place-items-center rounded-2xl bg-premium-accent text-premium-bg fa-brands fa-instagram"></i><span><strong>Instagram</strong><br><span class="text-sm text-slate-600 dark:text-premium-muted">Présence digitale</span></span></a>
         </div>
+      </aside>
     </section>
+  </main>
 
-    <!-- FAQ Section -->
-    <section class="bg-gradient-to-r from-purple-50 to-indigo-50 py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gradient">Questions fréquentes</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- FAQ Item 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                    <div class="flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 flex items-center justify-center mr-4 flex-shrink-0">
-                            <i class="fas fa-question text-purple-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">Quels types de projets acceptez-vous ?</h3>
-                            <p class="text-gray-600">
-                                Je travaille sur une variété de projets digitaux : sites web, stratégies digitales, 
-                                e-commerce, branding et accompagnement business. Chaque projet est unique et mérite 
-                                une approche personnalisée.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                    <div class="flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-100 to-cyan-100 flex items-center justify-center mr-4 flex-shrink-0">
-                            <i class="fas fa-question text-blue-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">Quel est votre délai de réponse ?</h3>
-                            <p class="text-gray-600">
-                                Je m'efforce de répondre à tous les messages dans un délai de 24 à 48 heures. 
-                                Pour les demandes urgentes, merci de le préciser dans votre message.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                    <div class="flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 flex items-center justify-center mr-4 flex-shrink-0">
-                            <i class="fas fa-question text-green-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">Proposez-vous des consultations gratuites ?</h3>
-                            <p class="text-gray-600">
-                                Oui, je propose une première consultation gratuite de 30 minutes pour discuter 
-                                de votre projet, comprendre vos besoins et voir comment je peux vous aider.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 4 -->
-                <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
-                    <div class="flex items-start">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-amber-100 to-orange-100 flex items-center justify-center mr-4 flex-shrink-0">
-                            <i class="fas fa-question text-amber-600"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">Travaillez-vous en freelance ou en agence ?</h3>
-                            <p class="text-gray-600">
-                                Les deux ! Je dirige LeadUp Digital (agence) mais je prends aussi des projets en freelance. 
-                                Le format dépend de l'ampleur et des besoins spécifiques de votre projet.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
-                            <span class="text-white font-bold">R</span>
-                        </div>
-                        <span class="text-xl font-bold">Rachel Fayila</span>
-                    </div>
-                    <p class="text-gray-400">Entrepreneure digitale | Community Manager | Développeuse web en formation</p>
-                </div>
-                
-                <div class="flex space-x-6">
-                    <a href="https://www.linkedin.com/in/rachel-fayila-5b633633b/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-linkedin text-2xl"></i>
-                    </a>
-                    <a href="https://www.instagram.com/fayila02?igsh=emppazdxbTU3bzh6" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-instagram text-2xl"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; <span id="current-year"></span> Rachel Fayila. Tous droits réservés.</p>
-                <p class="mt-2">Site conçu et développé par FayilaDigitalHub</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript pour les interactions -->
-    <script>
-        // DOM Elements
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const currentYearElement = document.getElementById('current-year');
-        const contactForm = document.getElementById('contact-form');
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const subjectInput = document.getElementById('subject');
-        const messageInput = document.getElementById('message');
-        const submitBtn = document.getElementById('submit-btn');
-        const submitText = document.getElementById('submit-text');
-        const submitLoading = document.getElementById('submit-loading');
-        const successMessage = document.getElementById('success-message');
-
-        // Toggle mobile menu
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Set current year in footer
-        currentYearElement.textContent = new Date().getFullYear();
-
-        // Form validation functions
-        function validateName() {
-            const name = nameInput.value.trim();
-            const errorElement = document.getElementById('name-error');
-            
-            if (name === '') {
-                nameInput.classList.add('input-error');
-                nameInput.classList.remove('input-success');
-                errorElement.textContent = 'Le nom est requis';
-                return false;
-            } else if (name.length < 2) {
-                nameInput.classList.add('input-error');
-                nameInput.classList.remove('input-success');
-                errorElement.textContent = 'Le nom doit contenir au moins 2 caractères';
-                return false;
-            } else {
-                nameInput.classList.remove('input-error');
-                nameInput.classList.add('input-success');
-                errorElement.textContent = '';
-                return true;
-            }
-        }
-
-        function validateEmail() {
-            const email = emailInput.value.trim();
-            const errorElement = document.getElementById('email-error');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (email === '') {
-                emailInput.classList.add('input-error');
-                emailInput.classList.remove('input-success');
-                errorElement.textContent = 'L\'email est requis';
-                return false;
-            } else if (!emailRegex.test(email)) {
-                emailInput.classList.add('input-error');
-                emailInput.classList.remove('input-success');
-                errorElement.textContent = 'Veuillez entrer une adresse email valide';
-                return false;
-            } else {
-                emailInput.classList.remove('input-error');
-                emailInput.classList.add('input-success');
-                errorElement.textContent = '';
-                return true;
-            }
-        }
-
-        function validateSubject() {
-            const subject = subjectInput.value;
-            const errorElement = document.getElementById('subject-error');
-            
-            if (subject === '') {
-                subjectInput.classList.add('input-error');
-                subjectInput.classList.remove('input-success');
-                errorElement.textContent = 'Veuillez sélectionner un sujet';
-                return false;
-            } else {
-                subjectInput.classList.remove('input-error');
-                subjectInput.classList.add('input-success');
-                errorElement.textContent = '';
-                return true;
-            }
-        }
-
-        function validateMessage() {
-            const message = messageInput.value.trim();
-            const errorElement = document.getElementById('message-error');
-            
-            if (message === '') {
-                messageInput.classList.add('input-error');
-                messageInput.classList.remove('input-success');
-                errorElement.textContent = 'Le message est requis';
-                return false;
-            } else if (message.length < 10) {
-                messageInput.classList.add('input-error');
-                messageInput.classList.remove('input-success');
-                errorElement.textContent = 'Le message doit contenir au moins 10 caractères';
-                return false;
-            } else {
-                messageInput.classList.remove('input-error');
-                messageInput.classList.add('input-success');
-                errorElement.textContent = '';
-                return true;
-            }
-        }
-
-        // Real-time validation
-        nameInput.addEventListener('input', validateName);
-        nameInput.addEventListener('blur', validateName);
-        
-        emailInput.addEventListener('input', validateEmail);
-        emailInput.addEventListener('blur', validateEmail);
-        
-        subjectInput.addEventListener('change', validateSubject);
-        subjectInput.addEventListener('blur', validateSubject);
-        
-        messageInput.addEventListener('input', validateMessage);
-        messageInput.addEventListener('blur', validateMessage);
-
-        // Form submission
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validate all fields
-            const isNameValid = validateName();
-            const isEmailValid = validateEmail();
-            const isSubjectValid = validateSubject();
-            const isMessageValid = validateMessage();
-            
-            if (isNameValid && isEmailValid && isSubjectValid && isMessageValid) {
-                // Show loading state
-                submitText.classList.add('hidden');
-                submitLoading.classList.remove('hidden');
-                submitBtn.disabled = true;
-                
-                // Simulate form submission (in a real app, you would send data to a server)
-                setTimeout(() => {
-                    // Hide loading state
-                    submitText.classList.remove('hidden');
-                    submitLoading.classList.add('hidden');
-                    submitBtn.disabled = false;
-                    
-                    // Show success message
-                    successMessage.style.display = 'block';
-                    
-                    // Reset form
-                    contactForm.reset();
-                    
-                    // Remove success/error classes
-                    [nameInput, emailInput, subjectInput, messageInput].forEach(input => {
-                        input.classList.remove('input-success', 'input-error');
-                    });
-                    
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        successMessage.style.display = 'none';
-                    }, 5000);
-                    
-                    // Log form data (in a real app, you would send this to a server)
-                    const formData = {
-                        name: nameInput.value,
-                        email: emailInput.value,
-                        subject: subjectInput.options[subjectInput.selectedIndex].text,
-                        message: messageInput.value,
-                        timestamp: new Date().toISOString()
-                    };
-                    
-                    console.log('Form submitted:', formData);
-                }, 1500);
-            } else {
-                // Scroll to first error
-                const firstError = document.querySelector('.input-error');
-                if (firstError) {
-                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    firstError.focus();
-                }
-            }
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
+  <footer class="border-t border-slate-200 py-10 text-slate-600 dark:border-white/10 dark:text-premium-muted">
+    <div class="mx-auto flex max-w-6xl flex-col gap-5 px-5 md:flex-row md:items-center md:justify-between"><div><strong class="text-slate-950 dark:text-white">Rachel Fayila</strong><p>&copy; <span data-year></span> Rachel Fayila.</p></div></div>
+  </footer>
+  <a class="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-2xl text-white shadow-2xl" href="https://wa.me/243000000000?text=Bonjour%20Rachel%2C%20je%20viens%20de%20votre%20portfolio" target="_blank" rel="noreferrer" aria-label="Contacter Rachel sur WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <script src="script.js"></script>
 </body>
 </html>

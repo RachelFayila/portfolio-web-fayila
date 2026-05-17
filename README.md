@@ -33,7 +33,7 @@ Présenter un profil professionnel crédible
 
 Démontrer des compétences en stratégie digitale et développement web
 
-Attirer des opportunités professionnelles et partenariats
+Attirer des opportunités professionnelles et collaborations
 
 Servir d'outil pour candidatures et prospection commerciale
 

@@ -1,312 +1,118 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rachel Fayila | Entrepreneure Digitale & Développeuse Web</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩‍💼</text></svg>">
-    <style>
-        * {
-            font-family: 'Inter', sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio premium de Rachel Fayila : développement web, digital, leadership et transformation digitale.">
+  <meta property="og:title" content="Rachel Fayila | Portfolio premium">
+  <meta property="og:description" content="Développement web, stratégie digitale et leadership.">
+  <meta property="og:image" content="images/rachel.jpeg">
+  <meta property="og:type" content="website">
+  <title>Rachel Fayila | Portfolio premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Inter", "sans-serif"] },
+          colors: {
+            premium: { bg: "#0B1120", card: "#111827", text: "#F9FAFB", muted: "#94A3B8", accent: "#C8A96B", button: "#2563EB" }
+          }
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .text-gradient {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .hover-lift {
-            transition: transform 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-        }
-        .section-divider {
-            border-bottom: 1px solid #e5e7eb;
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #667eea;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .profile-image-container {
-            position: relative;
-            overflow: hidden;
-        }
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .profile-image-container:hover .profile-image {
-            transform: scale(1.05);
-        }
-    </style>
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Navigation -->
-    <header class="sticky top-0 z-50 bg-white shadow-sm">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
-                        <span class="text-white font-bold">R</span>
-                    </div>
-                    <a href="index.html" class="text-xl font-bold text-gray-800">Rachel Fayila</a>
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="nav-link text-purple-600 font-medium">Accueil</a>
-                    <a href="projet.html" class="nav-link text-gray-600 hover:text-purple-600">Projets</a>
-                    <a href="cv.html" class="nav-link text-gray-600 hover:text-purple-600">Parcours</a>
-                    <a href="contact.html" class="nav-link text-gray-600 hover:text-purple-600">Contact</a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="index.html" class="text-purple-600 font-medium">Accueil</a>
-                    <a href="projet.html" class="text-gray-600 hover:text-purple-600">Projets</a>
-                    <a href="cv.html" class="text-gray-600 hover:text-purple-600">Parcours</a>
-                    <a href="contact.html" class="text-gray-600 hover:text-purple-600">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<body class="bg-slate-50 text-slate-950 antialiased transition-colors duration-300 dark:bg-premium-bg dark:text-premium-text">
+  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/75 backdrop-blur-2xl dark:border-white/10 dark:bg-premium-bg/75">
+    <nav class="mx-auto flex h-20 max-w-6xl items-center justify-between px-5" aria-label="Navigation principale">
+      <a class="flex items-center gap-3 font-black" href="index.html">
+        <span class="grid h-10 w-10 place-items-center rounded-2xl bg-premium-accent text-sm font-black text-premium-bg shadow-xl shadow-[#C8A96B]/20">RF</span>
+        <span>Rachel Fayila</span>
+      </a>
+      <div class="absolute left-5 right-5 top-20 hidden rounded-3xl border border-slate-200 bg-white p-3 shadow-2xl md:static md:flex md:items-center md:gap-1 md:border-0 md:bg-transparent md:p-0 md:shadow-none dark:border-white/10 dark:bg-premium-card md:dark:bg-transparent" data-nav-links>
+        <a class="block rounded-full px-4 py-3 text-sm font-bold text-slate-950 dark:bg-white/10 dark:text-white md:py-2" href="index.html">Accueil</a>
+        <a class="block rounded-full px-4 py-3 text-sm font-bold text-slate-600 transition hover:text-slate-950 md:py-2 dark:text-premium-muted dark:hover:text-white" href="projet.html">Projets</a>
+        <a class="block rounded-full px-4 py-3 text-sm font-bold text-slate-600 transition hover:text-slate-950 md:py-2 dark:text-premium-muted dark:hover:text-white" href="cv.html">Parcours</a>
+        <a class="block rounded-full px-4 py-3 text-sm font-bold text-slate-600 transition hover:text-slate-950 md:py-2 dark:text-premium-muted dark:hover:text-white" href="contact.html">Contact</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white text-slate-950 transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-premium-card dark:text-white" data-theme-toggle aria-label="Activer le mode sombre"><i class="fa-solid fa-moon"></i></button>
+        <button class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white text-slate-950 md:hidden dark:border-white/10 dark:bg-premium-card dark:text-white" data-menu-toggle aria-expanded="false" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient text-white">
-        <div class="container mx-auto px-4 py-16 md:py-24">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Rachel Fayila</h1>
-                    
-                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Entrepreneure digitale & Développeuse web en formation</h2>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="projet.html" class="bg-white text-purple-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300 hover-lift">
-                            Voir mes projets <i class="ml-2 fas fa-arrow-right"></i>
-                        </a>
-                        <a href="contact.html" class="bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition duration-300 hover-lift">
-                            Me contacter
-                        </a>
-                    </div>
-                </div>
-                <div class="flex justify-center">
-                    <div class="relative">
-                        <!-- Section d'image de profil modifiée -->
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 shadow-2xl overflow-hidden profile-image-container">
-                            <!-- IMAGE DE PROFIL - Deux options -->
-                            
-                            <img 
-                                src="images/fayila.jpg" 
-                                alt="Rachel Fayila - Entrepreneure digitale et développeuse web"
-                                class="profile-image"
-                                onerror="this.style.display='none'; document.getElementById('profile-placeholder').style.display='flex';"
-                            >
-                            
-                            <!-- OPTION 2: Placeholder par défaut (s'affiche si l'image ne charge pas) -->
-                            <div id="profile-placeholder" class="w-full h-full flex items-center justify-center" style="display: none;">
-                                <div class="text-center">
-                                    <span class="text-6xl md:text-8xl">👩‍💼</span>
-                                    <p class="mt-2 text-white text-sm">Photo de profil</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute -bottom-4 -right-4 bg-white text-gray-800 p-4 rounded-lg shadow-lg max-w-xs">
-                            <p class="font-semibold text-purple-600">💡 Vision</p>
-                            <p class="text-sm mt-1">"Digitaliser avec stratégie, innover avec impact."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <main>
+    <section class="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.08fr_.92fr] md:items-center md:py-24">
+      <div class="translate-y-4 opacity-0 transition duration-700" data-reveal>
+        <span class="mb-5 inline-flex rounded-full border border-[#C8A96B]/25 bg-[#C8A96B]/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-premium-accent">Digital · Leadership · Impact</span>
+        <h1 class="max-w-4xl text-5xl font-black leading-[0.96] tracking-normal md:text-7xl">Rachel Fayila <span class="mt-5 block text-xl font-semibold leading-relaxed text-slate-600 md:text-2xl dark:text-premium-muted">Développeuse web junior. Entrepreneure digitale. Profil stratégique.</span></h1>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="inline-flex h-12 items-center gap-2 rounded-full bg-premium-button px-6 font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-blue-700" href="projet.html"><i class="fa-solid fa-layer-group"></i> Projets</a>
+          <a class="inline-flex h-12 items-center gap-2 rounded-full border border-slate-200 bg-white px-6 font-extrabold transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-premium-card" href="contact.html"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+          <a class="inline-flex h-12 items-center gap-2 rounded-full bg-premium-accent px-6 font-extrabold text-premium-bg transition hover:-translate-y-0.5" href="cv.html"><i class="fa-solid fa-briefcase"></i> Parcours</a>
         </div>
+        <div class="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <div class="rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-premium-card/80"><strong class="block text-premium-accent">Web</strong><span class="text-sm text-slate-600 dark:text-premium-muted">interfaces utiles</span></div>
+          <div class="rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-premium-card/80"><strong class="block text-premium-accent">Digital</strong><span class="text-sm text-slate-600 dark:text-premium-muted">visibilité claire</span></div>
+          <div class="rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-premium-card/80"><strong class="block text-premium-accent">Lead</strong><span class="text-sm text-slate-600 dark:text-premium-muted">vision</span></div>
+          <div class="rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-premium-card/80"><strong class="block text-premium-accent">Impact</strong><span class="text-sm text-slate-600 dark:text-premium-muted">résultats</span></div>
+        </div>
+      </div>
+      <aside class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white/80 p-3 shadow-2xl shadow-slate-900/10 backdrop-blur-xl dark:border-white/10 dark:bg-premium-card/80" data-reveal>
+        <img class="aspect-[4/5] w-full rounded-[1.5rem] object-cover" src="images/fa.jpeg" alt="Portrait de Rachel Fayila">
+        <div class="absolute bottom-7 left-7 right-7 rounded-3xl border border-white/15 bg-premium-bg/75 p-5 text-white backdrop-blur-xl">
+          <strong>Vision stratégique</strong>
+          <p class="mt-1 text-sm text-slate-300">Créer simple. Inspirer confiance. Faire avancer.</p>
+        </div>
+      </aside>
     </section>
 
-    <!-- Statistics & Highlights -->
-    <section class="bg-white py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-               
-                <div class="p-8 rounded-xl bg-gradient-to-br from-pink-50 to-rose-50 hover-lift">
-                    <div class="text-4xl font-bold text-pink-600 mb-2" id="stat-2">5+</div>
-                    <div class="text-lg font-semibold text-gray-700 mb-1">Projets réalisés</div>
-                    <p class="text-gray-600">Sites web, e-commerce, dashboard</p>
-                </div>
-                <div class="p-8 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 hover-lift">
-                    <div class="text-4xl font-bold text-blue-600 mb-2" id="stat-3">3</div>
-                    <div class="text-lg font-semibold text-gray-700 mb-1">Certifications</div>
-                    <p class="text-gray-600">Community Management, Entrepreneuriat & Leadership</p>
-                </div>
-            </div>
+    <section class="border-y border-slate-200/70 bg-white/40 py-16 dark:border-white/10 dark:bg-white/[0.03]">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="mx-auto mb-10 max-w-2xl text-center" data-reveal>
+          <span class="text-xs font-black uppercase tracking-[0.18em] text-premium-accent">Positionnement</span>
+          <h2 class="mt-3 text-3xl font-black md:text-1xl">Technique, communication et leadership</h2>
         </div>
+        <div class="grid gap-5 md:grid-cols-3">
+          <article class="rounded-3xl border border-slate-200 bg-white/80 p-7 shadow-xl shadow-slate-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-premium-card/80" data-reveal><div class="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-premium-accent text-premium-bg"><i class="fa-solid fa-code"></i></div><h3 class="font-black">Développement web</h3><p class="mt-2 text-slate-600 dark:text-premium-muted">HTML, CSS, JavaScript, responsive design.</p></article>
+          <article class="rounded-3xl border border-slate-200 bg-white/80 p-7 shadow-xl shadow-slate-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-premium-card/80" data-reveal><div class="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-premium-accent text-premium-bg"><i class="fa-solid fa-bullhorn"></i></div><h3 class="font-black">Digital</h3><p class="mt-2 text-slate-600 dark:text-premium-muted">Contenu, communauté, marketing digital.</p></article>
+          <article class="rounded-3xl border border-slate-200 bg-white/80 p-7 shadow-xl shadow-slate-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-premium-card/80" data-reveal><div class="mb-5 grid h-12 w-12 place-items-center rounded-2xl bg-premium-accent text-premium-bg"><i class="fa-solid fa-chart-line"></i></div><h3 class="font-black">Leadership</h3><p class="mt-2 text-slate-600 dark:text-premium-muted">Gestion de projet, coordination, vision business.</p></article>
+        </div>
+      </div>
     </section>
 
-    <!-- Current Roles -->
-    <section class="bg-gray-50 py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gradient">Fonctions actuelles</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
-                    <div class="w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center mb-6">
-                        <i class="fas fa-cogs text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Partenaire</h3>
-                    <p class="text-gray-600 mb-4">Dark Business Hi-Tech</p>
-                    <p class="text-gray-600">Gestion des opérations et coordination des équipes pour des projets technologiques innovants.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-md hover-lift">
-                    <div class="w-14 h-14 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center mb-6">
-                        <i class="fas fa-hands-helping text-white text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">First Ambassadrice</h3>
-                    <p class="text-gray-600 mb-4">We Act / Rawbank</p>
-                    <p class="text-gray-600">Le programme We Act est un programme d'accompagnement des jeunes.</p>
-                </div>
-            </div>
-        </div>
+    <section class="mx-auto max-w-6xl px-5 py-16">
+      <div class="mb-8" data-reveal><span class="text-xs font-black uppercase tracking-[0.18em] text-premium-accent">Valeur</span><h2 class="mt-3 text-3xl font-black md:text-2xl">Pourquoi travailler avec moi ?</h2></div>
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="rounded-3xl border border-slate-200 bg-white/80 p-7 dark:border-white/10 dark:bg-premium-card/80" data-reveal><h3 class="font-black">Polyvalence</h3><p class="mt-2 text-slate-600 dark:text-premium-muted">Web, digital, business.</p></article>
+        <article class="rounded-3xl border border-slate-200 bg-white/80 p-7 dark:border-white/10 dark:bg-premium-card/80" data-reveal><h3 class="font-black">Maturité</h3><p class="mt-2 text-slate-600 dark:text-premium-muted">Sens des priorités.</p></article>
+        <article class="rounded-3xl border border-slate-200 bg-white/80 p-7 dark:border-white/10 dark:bg-premium-card/80" data-reveal><h3 class="font-black">Leadership</h3><p class="mt-2 text-slate-600 dark:text-premium-muted">Énergie, coordination, fiabilité.</p></article>
+      </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8 text-gradient">Prêt à collaborer sur un projet innovant ?</h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
-                Que vous ayez besoin d'une stratégie digitale, d'un site web professionnel ou d'un accompagnement business, 
-                je suis à votre écoute pour transformer vos idées en réalité.
-            </p>
-            <div class="flex flex-wrap justify-center gap-6">
-                <a href="projet.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold px-8 py-4 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 hover-lift">
-                    <i class="fas fa-code mr-2"></i> Voir mes projets
-                </a>
-                <a href="cv.html" class="bg-white border-2 border-purple-600 text-purple-600 font-semibold px-8 py-4 rounded-lg hover:bg-purple-50 transition duration-300 hover-lift">
-                    <i class="fas fa-file-alt mr-2"></i> Consulter mon CV
-                </a>
-                <a href="contact.html" class="bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold px-8 py-4 rounded-lg hover:from-pink-600 hover:to-rose-600 transition duration-300 hover-lift">
-                    <i class="fas fa-envelope mr-2"></i> Me contacter
-                </a>
-            </div>
-        </div>
+    <section class="mx-auto max-w-6xl px-5 pb-20">
+      <a class="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-premium-button px-6 font-extrabold text-white transition hover:bg-blue-700" href="projet.html"><i class="fa-solid fa-arrow-right"></i> Voir les projets</a>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
-                            <span class="text-white font-bold">R</span>
-                        </div>
-                        <span class="text-xl font-bold">Rachel Fayila</span>
-                    </div>
-                    <p class="text-gray-400">Entrepreneure digitale | Community Manager | Développeuse web en formation</p>
-                </div>
-                
-                <div class="flex space-x-6">
-                    <a href="https://www.linkedin.com/in/rachel-fayila-5b633633b/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-linkedin text-2xl"></i>
-                    </a>
-                    <a href="https://www.instagram.com/fayila02?igsh=emppazdxbTU3bzh6" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-instagram text-2xl"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; <span id="current-year"></span> Rachel Fayila. Tous droits réservés.</p>
-                <p class="mt-2">Site conçu et développé par FayilaDigitalHub</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript pour les interactions -->
-    <script>
-        // DOM Elements
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const currentYearElement = document.getElementById('current-year');
-        const stat1 = document.getElementById('stat-1');
-        const stat2 = document.getElementById('stat-2');
-        const stat3 = document.getElementById('stat-3');
-        
-        // Toggle mobile menu
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Set current year in footer
-        currentYearElement.textContent = new Date().getFullYear();
-        
-        // Animated counters for statistics
-        function animateCounter(element, target, duration) {
-            let start = 0;
-            const increment = target / (duration / 16); // 60fps
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target + "+";
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start) + "+";
-                }
-            }, 16);
-        }
-        
-        // Trigger counter animation when page loads
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                animateCounter(stat1, 2, 1000);
-                animateCounter(stat2, 5, 1000);
-                animateCounter(stat3, 3, 1000);
-            }, 500);
-            
-            // Afficher le placeholder si aucune image n'est chargée
-            const profileImg = document.querySelector('.profile-image');
-            if (profileImg && !profileImg.complete) {
-                // Si l'image n'est pas encore chargée, vérifier après un délai
-                setTimeout(() => {
-                    if (profileImg.naturalHeight === 0) {
-                        // Image non chargée, afficher le placeholder
-                        profileImg.style.display = 'none';
-                        document.getElementById('profile-placeholder').style.display = 'flex';
-                    }
-                }, 1000);
-            }
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
+  <footer class="border-t border-slate-200 py-10 text-slate-600 dark:border-white/10 dark:text-premium-muted">
+    <div class="mx-auto flex max-w-6xl flex-col gap-5 px-5 md:flex-row md:items-center md:justify-between">
+      <div><strong class="text-slate-950 dark:text-white">Rachel Fayila</strong><p>Digital, web, leadership.</p><p>&copy; <span data-year></span> Rachel Fayila.</p></div>
+      <div class="flex gap-3">
+        <a class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white dark:border-white/10 dark:bg-premium-card dark:text-white" href="mailto:fayilamayolarachel@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white dark:border-white/10 dark:bg-premium-card dark:text-white" href="https://www.linkedin.com/in/rachel-fayila-5b633633b/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a class="grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white dark:border-white/10 dark:bg-premium-card dark:text-white" href="https://www.instagram.com/fayila02?igsh=emppazdxbTU3bzh6" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+  <a class="fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-2xl text-white shadow-2xl shadow-[#25D366]/30" href="https://wa.me/243000000000?text=Bonjour%20Rachel%2C%20je%20viens%20de%20votre%20portfolio" target="_blank" rel="noreferrer" aria-label="Contacter Rachel sur WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <script src="script.js"></script>
 </body>
 </html>
