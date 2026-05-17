@@ -4,7 +4,7 @@
 
 - ❌ **Balise `<script>` mal placée** : ne mettez pas vos scripts dans `<head>`. 💡 Placez-les avant `</body>`.
 
-- ❌ **Valeur d'attribut incorrecte ou dangereuse**.
+- ❌ **Balise non fermée** : chaque balise ouvrante doit avoir une balise fermante.
 
 
 
@@ -20,6 +20,4 @@
 
 # Feedback Sections HTML
 
-- ❌ Dans projet.html : la balise <section> n°2 ne contient pas de titre (h1-h6).
-- ❌ Dans index.html : la balise <section> n°2 ne contient pas de titre (h1-h6).
-- ❌ Dans cv.html : la balise <section> n°2 ne contient pas de titre (h1-h6).
+- ❌ Dans index.html : la balise <section> n°4 ne contient pas de titre (h1-h6).
